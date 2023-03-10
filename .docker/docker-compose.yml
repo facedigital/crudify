@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: digitalocean.com/php
+        container_name: crud-generator
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "8080:80"
+        working_dir: /var/www
+        volumes:
+        - ../:/var/www
