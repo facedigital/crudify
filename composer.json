@@ -22,7 +22,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "FaceDigital\\FaceGen\\Tests": "tests/"
+            "FaceDigital\\FaceGen\\Tests\\": "tests/"
         }
     }
 }
