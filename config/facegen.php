@@ -11,7 +11,7 @@ return [
         'boolean',
         'enum', 'set',
         'json', 'jsonb',
-        'date', 'dateTime', 'dateTimeTz',
+        'date', 'datetime', 'dateTimeTz',
         'time', 'timestamp',
         'timestamps',
         'year',

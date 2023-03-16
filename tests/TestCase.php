@@ -4,8 +4,12 @@ namespace FaceDigital\FaceGen\Tests;
 
 use FaceDigital\FaceGen\Providers\FaceGenServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-abstract class TestCase extends Orchestra {
+abstract class TestCase extends Orchestra
+{
+    use RefreshDatabase;
+
     protected function getPackageProviders($app): array
     {
         return [
