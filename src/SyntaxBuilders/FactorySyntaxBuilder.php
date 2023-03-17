@@ -2,40 +2,19 @@
 
 namespace FaceDigital\FaceGen\SyntaxBuilders;
 
-class FactorySyntaxBuilder
+class FactorySyntaxBuilder extends SyntaxBuilder
 {
-    protected string $template;
-
-    public function create(array $schema): string
-    {
-        return $this->createSchema($schema);
-    }
-
-    private function createSchema(array $schema): string
-    {
-        $fields = $this->constructSchema($schema);
-
-        return $this->insert($fields)->into($this->getSchemaWrapper());
-    }
-
-    private function insert(string $template): FactorySyntaxBuilder
-    {
-        $this->template = $template;
-
-        return $this;
-    }
-
-    private function into(string $wrapper): string
+    protected function into(string $wrapper): string
     {
         return str_replace('{{column}}', $this->template, $wrapper);
     }
 
-    private function getSchemaWrapper()
+    protected function getSchemaWrapper(): string
     {
         return file_get_contents(__DIR__ . '/../../stubs/database/factories/factory.php.stub');
     }
 
-    private function constructSchema(array $schema): string
+    protected function constructSchema(array $schema): string
     {
         $fields = array_map(fn ($field) => $this->addColumn($field), $schema);
 
