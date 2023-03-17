@@ -2,6 +2,7 @@
 
 namespace FaceDigital\FaceGen\Providers;
 
+use FaceDigital\FaceGen\Commands\FactoryCommand;
 use FaceDigital\FaceGen\Commands\MigrationCommand;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -24,9 +25,10 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             'facegen'
         );
 
-        if($this->app->runningInConsole()) {
+        if ($this->app->runningInConsole()) {
             $this->commands([
-                MigrationCommand::class
+                MigrationCommand::class,
+                FactoryCommand::class
             ]);
         }
     }
@@ -34,8 +36,8 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
     public function provides()
     {
         return [
-            MigrationCommand::class
+            MigrationCommand::class,
+            FactoryCommand::class
         ];
     }
-
 }
