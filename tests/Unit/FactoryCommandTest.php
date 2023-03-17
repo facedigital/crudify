@@ -30,6 +30,7 @@ class FactoryCommandTest extends TestCase
         // exclui após o teste
         unlink($path);
     }
+
     /**
      * @test
      */
@@ -42,7 +43,8 @@ class FactoryCommandTest extends TestCase
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
-        ->expectsOutput("Factory {$classname} criada: {$filename}")
+        ->expectsOutput("Creating File: {$filename}")
+        ->expectsOutput("Created File: {$filename}")
         ->assertExitCode(0);
 
         unlink(database_path("factories/{$filename}"));

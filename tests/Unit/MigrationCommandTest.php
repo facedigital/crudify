@@ -30,7 +30,8 @@ class MigrationCommandTest extends TestCase
             '--schema' => 'title:string, subtitle:string:nullable, content:text',
             '--timestamp' => $timestamp
         ])
-        ->expectsOutput("Migration criada: {$filename}")
+        ->expectsOutput("Creating File: {$filename}")
+        ->expectsOutput("Created File: {$filename}")
         ->assertExitCode(0);
 
         unlink(database_path("migrations/{$filename}"));
