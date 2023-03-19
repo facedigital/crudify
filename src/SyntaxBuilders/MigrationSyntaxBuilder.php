@@ -4,14 +4,9 @@ namespace FaceDigital\FaceGen\SyntaxBuilders;
 
 class MigrationSyntaxBuilder extends SyntaxBuilder
 {
-    protected function into(string $wrapper): string
-    {
-        return str_replace('{{schema_up}}', $this->template, $wrapper);
-    }
-
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/database/migrations/schema-create.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/database/migrations/migration.php.stub');
     }
 
     protected function constructSchema(array $schema): string

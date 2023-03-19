@@ -11,7 +11,11 @@ class {{className}} extends Migration
      */
     public function up(): void
     {
-        {{schema_up}}
+        Schema::create('{{tableName}}', function (Blueprint $table) {
+            $table->id();
+            {{column}}
+            $table->timestamps();
+        });
     }
 
     /**

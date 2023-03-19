@@ -4,11 +4,6 @@ namespace FaceDigital\FaceGen\SyntaxBuilders;
 
 class FactorySyntaxBuilder extends SyntaxBuilder
 {
-    protected function into(string $wrapper): string
-    {
-        return str_replace('{{column}}', $this->template, $wrapper);
-    }
-
     protected function getSchemaWrapper(): string
     {
         return file_get_contents(__DIR__ . '/../../stubs/database/factories/factory.php.stub');

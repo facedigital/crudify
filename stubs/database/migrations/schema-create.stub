@@ -1,5 +1,0 @@
-Schema::create('{{tableName}}', function (Blueprint $table) {
-            $table->id();
-            {{schema_up}}
-            $table->timestamps();
-        });

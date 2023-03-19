@@ -20,7 +20,7 @@ class MigrationCommandTest extends TestCase
 
         $timestamp = now()->format('Y_H_d_His');
         $filename = sprintf(
-            '%s_create_%s_table',
+            '%s_create_%s_table.php',
             $timestamp,
             Str::snake($name = 'posts')
         );
@@ -65,6 +65,8 @@ class MigrationCommandTest extends TestCase
         /** @var MigrationCommand $migrationCommand */
         $migrationCommand = $this->app->make(MigrationCommand::class);
 
+        Schema::dropIfExists('posts');
+
         // Cria Tabela Posts para teste
         Schema::create('posts', function (Blueprint $table) {
             $table->string('title');
@@ -83,7 +85,7 @@ class MigrationCommandTest extends TestCase
         $this->assertEquals(file_get_contents(__DIR__.'/../../storage/tests/database/migrations/create_posts_table.compiled'), $migrationCommand->compileStub());
 
         // remove tabela após o teste
-        Schema::drop('posts');
+        Schema::dropIfExists('posts');
     }
 
     /**
@@ -93,6 +95,8 @@ class MigrationCommandTest extends TestCase
     {
         /** @var MigrationCommand $migrationCommand */
         $migrationCommand = $this->app->make(MigrationCommand::class);
+
+        Schema::dropIfExists('posts');
 
         // Cria Tabela Posts para teste
         Schema::create('posts', function (Blueprint $table) {
@@ -106,6 +110,6 @@ class MigrationCommandTest extends TestCase
         $this->assertEquals("id:integer:autoIncrement, title:string, subtitle:string:nullable, content:text, created_at:datetime:nullable, updated_at:datetime:nullable", $migrationCommand->getTableSchema('posts'));
 
         // remove tabela após o teste
-        Schema::drop('posts');
+        Schema::dropIfExists('posts');
     }
 }

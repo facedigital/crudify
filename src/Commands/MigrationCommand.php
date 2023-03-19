@@ -15,8 +15,6 @@ class MigrationCommand extends GeneratorCommand
 
     public function compileStub(): string
     {
-        $content = $this->filesystem->get(__DIR__.'/../../stubs/database/migrations/migration.php.stub');
-
         if (!$this->option('schema')) {
             $schemaOption = $this->getTableSchema($this->argument('name'));
         } else {
@@ -24,9 +22,7 @@ class MigrationCommand extends GeneratorCommand
         }
 
         $schema = (new SchemaParser())->parse($schemaOption);
-        $schema = (new MigrationSyntaxBuilder())->create($schema);
-
-        $content = str_replace('{{schema_up}}', $schema, $content);
+        $content = (new MigrationSyntaxBuilder())->create($schema);
 
         $content = str_replace(
             ['{{tableName}}', '{{className}}'],
@@ -39,9 +35,7 @@ class MigrationCommand extends GeneratorCommand
 
     protected function path(): string
     {
-        $filename = $this->fileName();
-
-        return database_path("migrations/{$filename}");
+        return database_path("migrations/{$this->fileName()}");
     }
 
     protected function alreadyExists(): bool
@@ -62,7 +56,7 @@ class MigrationCommand extends GeneratorCommand
             : now()->format('Y_H_d_His');
 
         return sprintf(
-            '%s_create_%s_table',
+            '%s_create_%s_table.php',
             $timestamp,
             $this->tableName()
         );
