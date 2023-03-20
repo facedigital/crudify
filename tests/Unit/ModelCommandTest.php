@@ -41,7 +41,7 @@ class ModelCommandTest extends TestCase
 
         $this->artisan('facegen:model', [
             'name' => 'post',
-            '--schema' => 'title:string, subtitle:string:nullable, content:text'
+            '--schema' => 'title:string, subtitle:string:nullable, content:text, user_id:foreignId:constrained'
         ])
         ->expectsOutput("Creating File: {$filename}")
         ->expectsOutput("Created File: {$filename}")
@@ -61,7 +61,7 @@ class ModelCommandTest extends TestCase
         $parameters = [
             'facegen:model',
             'name' => 'post',
-            '--schema' => 'title:string(150), subtitle:string:nullable, content:text'
+            '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreignId:constrained'
         ];
 
         $input = new ArrayInput($parameters, $modelCommand->getDefinition());

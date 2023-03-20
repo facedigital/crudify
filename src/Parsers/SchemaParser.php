@@ -92,11 +92,15 @@ class SchemaParser
             $arguments = explode(',', $matches[2]);
         }
 
-        if(!in_array($type, config('facegen.blueprint_types'))) {
+        if (!in_array($type, config('facegen.blueprint_types'))) {
             throw new \InvalidArgumentException("Collumn type: $type not available");
         }
 
-        return compact('name', 'type', 'arguments', 'options');
+        $foreign = in_array($type, config('facegen.foreign_types'))
+            ? (string) Str::of(str_replace('_id', '', $name))->studly()->singular()
+            : null;
+
+        return compact('name', 'type', 'arguments', 'options', 'foreign');
     }
 
     /**
@@ -107,7 +111,9 @@ class SchemaParser
      */
     private function parseOptions($options)
     {
-        if (empty($options)) return [];
+        if (empty($options)) {
+            return [];
+        }
 
         foreach ($options as $option) {
             if (Str::contains($option, '(')) {
