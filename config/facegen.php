@@ -6,7 +6,7 @@ return [
         'increments', 'integerIncrements', 'tinyIncrements', 'smallIncrements', 'mediumIncrements', 'bigIncrements',
         'char', 'string', 'text', 'mediumText', 'longText',
         'integer',
-        'unsignedInteger',
+        'unsignedInteger', 'unsignedTinyInteger', 'unsignedSmallInteger', 'unsignedMediumInteger', 'unsignedBigInteger',
         'float',
         'boolean',
         'enum', 'set',

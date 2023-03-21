@@ -2,6 +2,8 @@
 
 namespace FaceDigital\FaceGen\SyntaxBuilders;
 
+use Illuminate\Support\Str;
+
 class FactorySyntaxBuilder extends SyntaxBuilder
 {
     protected function into(string $wrapper): string
@@ -16,14 +18,25 @@ class FactorySyntaxBuilder extends SyntaxBuilder
 
     protected function constructSchema(array $schema): array
     {
-        $fields = array_map(fn ($field) => $this->addColumn($field), $schema);
+        $fields = array_map(
+            fn ($field) => $this->addColumn($field),
+            array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
+        );
 
-        $template['column'] = implode("\r\n".str_repeat(' ', 12), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 12), $fields);
         return $template;
     }
 
     private function addColumn(array $field): string
     {
+        if ('_id' === substr($field['name'], -3)) {
+            return sprintf(
+                "'%s' => %s::factory(),",
+                $field['name'],
+                Str::of(str_replace('_id', '', $field['name']))->studly()->singular()
+            );
+        }
+
         return sprintf("'%s' => \$this->faker->%s,", $field['name'], $this->fakerType($field));
     }
 

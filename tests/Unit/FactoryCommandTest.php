@@ -61,13 +61,31 @@ class FactoryCommandTest extends TestCase
         $parameters = [
             'facegen:factory',
             'name' => 'post',
-            '--schema' => 'title:string(150), subtitle:string:nullable, content:text'
+            '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];
 
         $input = new ArrayInput($parameters, $factoryCommand->getDefinition());
         $factoryCommand->setInput($input);
 
-        // dd($factoryCommand->compileStub());
+        $this->assertEquals(file_get_contents(__DIR__.'/../../storage/tests/database/factories/PostFactory.compiled'), $factoryCommand->compileStub());
+    }
+
+     /**
+     * @test
+     */
+    public function checkCompiledStubOldForeignSyntaxFactory()
+    {
+        /** @var FactoryCommand $factoryCommand */
+        $factoryCommand = $this->app->make(FactoryCommand::class);
+
+        $parameters = [
+            'facegen:factory',
+            'name' => 'post',
+            '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:unsignedBigInteger:foreign'
+        ];
+
+        $input = new ArrayInput($parameters, $factoryCommand->getDefinition());
+        $factoryCommand->setInput($input);
 
         $this->assertEquals(file_get_contents(__DIR__.'/../../storage/tests/database/factories/PostFactory.compiled'), $factoryCommand->compileStub());
     }

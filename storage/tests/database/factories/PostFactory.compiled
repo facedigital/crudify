@@ -24,6 +24,7 @@ class PostFactory extends Factory
             'title' => $this->faker->text(150),
             'subtitle' => $this->faker->text(),
             'content' => $this->faker->text(),
+            'user_id' => User::factory(),
         ];
     }
 }
