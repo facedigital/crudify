@@ -6,43 +6,38 @@ use Illuminate\Support\Str;
 
 trait NamingConvention
 {
-    protected function resourceName()
+    protected function singularName()
     {
-        return Str::of($this->argument('name'))
-            ->lower()
-            ->singular();
+        return Str::of($this->argument('name'))->singular();
+    }
+
+    protected function pluralName()
+    {
+        return Str::of($this->argument('name'))->plural();
     }
 
     protected function tableName()
     {
-        return Str::of($this->argument('name'))
-            ->snake()
-            ->plural();
+        return $this->pluralName()->snake();
     }
 
     protected function modelName()
     {
-        return $this
-            ->resourceName()
-            ->studly();
+        return $this->singularName()->studly();
     }
 
-    protected function controllerName()
+    protected function objectName()
     {
-        return sprintf('%sController', $this->modelName());
+        return $this->singularName()->camel();
     }
 
     protected function routeName()
     {
-        return $this
-            ->tableName()
-            ->kebab();
+        return $this->pluralName()->kebab();
     }
 
-    protected function paramName()
+    protected function parameterName()
     {
-        return $this
-            ->modelName()
-            ->kebab();
+        return $this->singularName()->snake();
     }
 }
