@@ -2,6 +2,7 @@
 
 namespace FaceDigital\FaceGen\Providers;
 
+use FaceDigital\FaceGen\Commands\ControllerCommand;
 use FaceDigital\FaceGen\Commands\FactoryCommand;
 use FaceDigital\FaceGen\Commands\MigrationCommand;
 use FaceDigital\FaceGen\Commands\ModelCommand;
@@ -30,7 +31,8 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             $this->commands([
                 MigrationCommand::class,
                 FactoryCommand::class,
-                ModelCommand::class
+                ModelCommand::class,
+                ControllerCommand::class
             ]);
         }
     }
@@ -40,7 +42,8 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
         return [
             MigrationCommand::class,
             FactoryCommand::class,
-            ModelCommand::class
+            ModelCommand::class,
+            ControllerCommand::class
         ];
     }
 }
