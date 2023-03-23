@@ -25,5 +25,12 @@
         "psr-4": {
             "FaceDigital\\FaceGen\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FaceDigital\\FaceGen\\Providers\\FaceGenServiceProvider"
+            ]
+        }
     }
 }
