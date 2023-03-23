@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "illuminate/support": "^8.0",
-        "illuminate/console": "^8.27",
+        "illuminate/support": "^9.*",
+        "illuminate/console": "^9.*",
         "doctrine/dbal": "^3.6"
     },
     "require-dev": {
