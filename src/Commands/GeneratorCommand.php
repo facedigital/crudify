@@ -60,12 +60,12 @@ abstract class GeneratorCommand extends Command implements Generator
         $this->makeDirectory();
 
         // TODO: Mover para fora
-        if (!$this->option('schema')) {
-            // ler estrutura da tabela
-            $schema = $this->getTableSchema($this->argument('name'));
-            // TODO: gerar model, controller e Views com base no Schema
-            return $schema;
-        }
+        // if (!$this->option('schema')) {
+        //     // ler estrutura da tabela
+        //     $schema = $this->getTableSchema($this->argument('name'));
+        //     // TODO: gerar model, controller e Views com base no Schema
+        //     return $schema;
+        // }
 
         $this->filesystem->put($this->path(), $this->compileStub());
     }
