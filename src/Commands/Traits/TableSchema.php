@@ -38,7 +38,7 @@ trait TableSchema
         $columnAtributes = (object) [
             "name"          => $column->getName(),
             "type"          => $colType ? ':'.$colType : '',
-            "length"        => $doctrineColumn->getLength() ? $doctrineColumn->getLength() : '',
+            "length"        => $doctrineColumn->getLength() ? '('.$doctrineColumn->getLength().')' : '',
             "unsigned"      => $doctrineColumn->getUnsigned() ? ':unsigned' : '',
             "notNull"       => $doctrineColumn->getNotnull() ? '' : ':nullable',
             "default"       => $colDefault ? 'default('.$colDefault.')' : '',
