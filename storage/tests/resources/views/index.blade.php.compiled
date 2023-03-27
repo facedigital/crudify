@@ -1,0 +1,43 @@
+<!-- resources/views/posts/index.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h2>Post</h2>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Content</th>
+                <th>UserId</th>
+                <th width="280px">Ações</th>
+            </tr>
+            @foreach ($posts as $post)
+            <tr>
+                <td>{{ $post->title }}</td>
+                <td>{{ $post->subtitle }}</td>
+                <td>{{ $post->content }}</td>
+                <td>{{ $post->user_id }}</td>
+                <td>
+                    <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('posts.show', $post->id) }}">Ver</a>
+                        <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Editar</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </table>
+        <div class="d-flex justify-content-center">
+            {!! $posts->links() !!}
+        </div>
+    </div>
+@endsection

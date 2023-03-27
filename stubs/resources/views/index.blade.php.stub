@@ -1,0 +1,37 @@
+<!-- resources/views/{{pluralName}}/index.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h2>{{modelName}}</h2>
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
+        <table class="table table-bordered">
+            <tr>
+                {{column}}
+                <th width="280px">Ações</th>
+            </tr>
+            @foreach (${{pluralName}} as ${{singularName}})
+            <tr>
+                {{row}}
+                <td>
+                    <form action="{{ route('{{pluralName}}.destroy', ${{singularName}}->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('{{pluralName}}.show', ${{singularName}}->id) }}">Ver</a>
+                        <a class="btn btn-primary" href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}">Editar</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </table>
+        <div class="d-flex justify-content-center">
+            {!! ${{pluralName}}->links() !!}
+        </div>
+    </div>
+@endsection
