@@ -1,5 +1,24 @@
 # FaceDigital - CRUD Generator
 
+## Instalação
+Instalando a partir de repositório privado. Adicionar estas linhas no `composer.json` do projeto.
+
+```json
+"require": {
+    "facedigital/facegen": "*"
+}
+```
+Caso não seja informada a versão será instalada a branch master.
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "git@code.facedigital.net:facedigital/crud-generator.git"
+    }
+]
+```
+
 ## Comandos
 
 ### Migration
