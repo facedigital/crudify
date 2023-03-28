@@ -1,0 +1,18 @@
+<!-- resources/views/posts/show.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h2>Post Detalhes</h2>
+
+        <x-info-label label="Title" :name="$post->Title" />
+        <x-info-label label="Subtitle" :name="$post->Subtitle" />
+        <x-info-label label="Content" :name="$post->Content" />
+        <x-info-label label="UserId" :name="$post->UserId" />
+
+        <div class="form-group">
+            <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Editar</a>
+        </div>
+    </div>
+@endsection

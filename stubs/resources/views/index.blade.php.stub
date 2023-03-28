@@ -5,16 +5,19 @@
 @section('content')
     <div class="container">
         <h2>{{modelName}}</h2>
+
         @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div>
         @endif
+
         <table class="table table-bordered">
             <tr>
                 {{column}}
                 <th width="280px">Ações</th>
             </tr>
+
             @foreach (${{pluralName}} as ${{singularName}})
             <tr>
                 {{row}}
@@ -30,6 +33,7 @@
             </tr>
             @endforeach
         </table>
+
         <div class="d-flex justify-content-center">
             {!! ${{pluralName}}->links() !!}
         </div>

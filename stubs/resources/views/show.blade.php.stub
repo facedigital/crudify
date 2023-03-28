@@ -1,0 +1,15 @@
+<!-- resources/views/{{pluralName}}/show.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h2>{{modelName}} Detalhes</h2>
+
+        {{column}}
+
+        <div class="form-group">
+            <a class="btn btn-primary" href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}">Editar</a>
+        </div>
+    </div>
+@endsection

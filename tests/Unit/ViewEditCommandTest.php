@@ -2,25 +2,25 @@
 
 namespace FaceDigital\FaceGen\Tests\Unit;
 
-use FaceDigital\FaceGen\Commands\Views\ViewIndexCommand;
+use FaceDigital\FaceGen\Commands\Views\ViewEditCommand;
 use FaceDigital\FaceGen\Tests\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 
-class ViewIndexCommandTest extends TestCase
+class ViewEditCommandTest extends TestCase
 {
     /**
      * @test
      */
-    public function checkViewIndexAlreadyExists()
+    public function checkViewEditAlreadyExists()
     {
-        $viewName = 'index';
+        $viewName = 'edit';
         $filename = $viewName.'.blade.php';
         $path = resource_path("views/posts/{$filename}");
 
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:index', [
+        $this->artisan('facegen:edit', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -34,14 +34,14 @@ class ViewIndexCommandTest extends TestCase
     /**
      * @test
      */
-    public function canRunViewIndexCommand()
+    public function canRunViewEditCommand()
     {
-        $viewName = 'index';
+        $viewName = 'edit';
         $filename = $viewName.'.blade.php';
         $path = resource_path("views/posts/{$filename}");
 
 
-        $this->artisan('facegen:index', [
+        $this->artisan('facegen:edit', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -55,20 +55,20 @@ class ViewIndexCommandTest extends TestCase
     /**
      * @test
      */
-    public function checkCompiledStubViewIndex()
+    public function checkCompiledStubViewEdit()
     {
-        /** @var ViewIndexCommand $viewIndexCommand */
-        $viewIndexCommand = $this->app->make(ViewIndexCommand::class);
+        /** @var ViewEditCommand $viewEditCommand */
+        $viewEditCommand = $this->app->make(ViewEditCommand::class);
 
         $parameters = [
-            'facegen:index',
+            'facegen:edit',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];
 
-        $input = new ArrayInput($parameters, $viewIndexCommand->getDefinition());
-        $viewIndexCommand->setInput($input);
+        $input = new ArrayInput($parameters, $viewEditCommand->getDefinition());
+        $viewEditCommand->setInput($input);
 
-        $this->assertEquals(file_get_contents(__DIR__.'/../../storage/tests/resources/views/index.blade.php.compiled'), $viewIndexCommand->compileStub());
+        $this->assertEquals(file_get_contents(__DIR__.'/../../storage/tests/resources/views/edit.blade.php.compiled'), $viewEditCommand->compileStub());
     }
 }

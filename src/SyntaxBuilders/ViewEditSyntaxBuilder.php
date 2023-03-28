@@ -1,0 +1,57 @@
+<?php
+
+namespace FaceDigital\FaceGen\SyntaxBuilders;
+
+use FaceDigital\FaceGen\Commands\Traits\NamingConvention;
+use Illuminate\Support\Str;
+
+class ViewEditSyntaxBuilder extends SyntaxBuilder
+{
+    use NamingConvention;
+
+    protected function into(string $wrapper): string
+    {
+        return str_replace(['{{column}}'], $this->template, $wrapper);
+    }
+
+    protected function getSchemaWrapper(): string
+    {
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/edit.blade.php.stub');
+    }
+
+    protected function constructSchema(array $schema): array
+    {
+        $fields = array_map(
+            fn ($field) => $this->addColumn($field),
+            array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
+        );
+
+        $template['column'] = implode("\n".str_repeat(' ', 12), $fields);
+
+        return $template;
+    }
+
+    private function addColumn(array $field): string
+    {
+        return sprintf("%s->%s name='%s' label='%s' />", $this->inputType($field), $field['name'].'"', $field['name'], Str::studly($field['name']));
+    }
+
+    private function inputType(array $field): string
+    {
+        $type = '<x-input-text';
+
+        if (in_array($field['type'], config('facegen.string_types'))) {
+            $type = '<x-input-text';
+        }
+
+        if (in_array($field['type'], config('facegen.integer_types'))) {
+            $type = '<x-input-number';
+        }
+
+        if (in_array($field['type'], config('facegen.date_types'))) {
+            $type = '<x-input-date';
+        }
+
+        return $type.' :value="${{singularName}}';
+    }
+}

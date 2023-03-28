@@ -1,0 +1,19 @@
+<!-- resources/views/{{pluralName}}/edit.blade.php -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <h2>Editar {{modelName}}</h2>
+        <form method="POST" action="{{ route('{{pluralName}}.update', ${{singularName}}->id) }}">
+            @csrf
+            @method('PUT')
+
+            {{column}}
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
+@endsection

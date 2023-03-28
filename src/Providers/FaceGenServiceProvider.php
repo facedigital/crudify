@@ -7,6 +7,9 @@ use FaceDigital\FaceGen\Commands\FactoryCommand;
 use FaceDigital\FaceGen\Commands\MigrationCommand;
 use FaceDigital\FaceGen\Commands\ModelCommand;
 use FaceDigital\FaceGen\Commands\Views\ViewIndexCommand;
+use FaceDigital\FaceGen\Commands\Views\ViewCreateCommand;
+use FaceDigital\FaceGen\Commands\Views\ViewEditCommand;
+use FaceDigital\FaceGen\Commands\Views\ViewShowCommand;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,7 +37,10 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
                 FactoryCommand::class,
                 ModelCommand::class,
                 ControllerCommand::class,
-                ViewIndexCommand::class
+                ViewIndexCommand::class,
+                ViewCreateCommand::class,
+                ViewEditCommand::class,
+                ViewShowCommand::class
             ]);
         }
     }
@@ -46,7 +52,10 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             FactoryCommand::class,
             ModelCommand::class,
             ControllerCommand::class,
-            ViewIndexCommand::class
+            ViewIndexCommand::class,
+            ViewCreateCommand::class,
+            ViewEditCommand::class,
+            ViewShowCommand::class
         ];
     }
 }
