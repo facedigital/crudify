@@ -2,6 +2,7 @@
 
 namespace FaceDigital\FaceGen\Providers;
 
+use FaceDigital\FaceGen\Commands\AllCommand;
 use FaceDigital\FaceGen\Commands\ControllerCommand;
 use FaceDigital\FaceGen\Commands\FactoryCommand;
 use FaceDigital\FaceGen\Commands\MigrationCommand;
@@ -20,7 +21,14 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
     public function boot()
     {
         $this->publishes([
+            // config
             self::ROOT_PATH.'/config/facegen.php' => config_path('facegen.php'),
+            // class components
+            self::ROOT_PATH.'/src/View/Components/InfoLabel.php' => app_path('View/Components/InfoLabel.php'),
+            self::ROOT_PATH.'/src/View/Components/InputText.php' => app_path('View/Components/InputText.php'),
+            // component views
+            self::ROOT_PATH.'/resources/views/components/info-label.blade.php' => resource_path('resources/views/components/info-label.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/input-text.blade.php' => resource_path('resources/views/components/input-text.blade.php'),
         ], 'facegen');
     }
 
@@ -33,6 +41,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
 
         if ($this->app->runningInConsole()) {
             $this->commands([
+                AllCommand::class,
                 MigrationCommand::class,
                 FactoryCommand::class,
                 ModelCommand::class,
@@ -48,6 +57,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
     public function provides()
     {
         return [
+            AllCommand::class,
             MigrationCommand::class,
             FactoryCommand::class,
             ModelCommand::class,
