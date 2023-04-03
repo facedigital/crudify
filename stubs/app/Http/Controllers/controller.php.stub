@@ -9,7 +9,7 @@ class {{modelName}}Controller extends Controller
 {
     public function index()
     {
-        ${{pluralName}} = {{modelName}}::all();
+        ${{pluralName}} = {{modelName}}::paginate(10);
         return view('{{pluralName}}.index', compact('{{pluralName}}'));
     }
 

@@ -27,8 +27,8 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             self::ROOT_PATH.'/src/View/Components/InfoLabel.php' => app_path('View/Components/InfoLabel.php'),
             self::ROOT_PATH.'/src/View/Components/InputText.php' => app_path('View/Components/InputText.php'),
             // component views
-            self::ROOT_PATH.'/resources/views/components/info-label.blade.php' => resource_path('resources/views/components/info-label.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-text.blade.php' => resource_path('resources/views/components/input-text.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/info-label.blade.php' => resource_path('views/components/info-label.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/input-text.blade.php' => resource_path('views/components/input-text.blade.php'),
         ], 'facegen');
     }
 
