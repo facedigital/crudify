@@ -38,18 +38,18 @@ class ViewEditSyntaxBuilder extends SyntaxBuilder
 
     private function inputType(array $field): string
     {
-        $type = '<x-input-text';
+        $type = '<x-facegen.input-text';
 
         if (in_array($field['type'], config('facegen.string_types'))) {
-            $type = '<x-input-text';
+            $type = '<x-facegen.input-text';
         }
 
         if (in_array($field['type'], config('facegen.integer_types'))) {
-            $type = '<x-input-number';
+            $type = '<x-facegen.input-number';
         }
 
         if (in_array($field['type'], config('facegen.date_types'))) {
-            $type = '<x-input-date';
+            $type = '<x-facegen.input-date';
         }
 
         return $type.' :value="${{singularName}}';

@@ -19,6 +19,10 @@ Caso não seja informada a versão será instalada a branch master.
 ]
 ```
 
+Após a instalação rodar o comando:
+
+`php artisan vendor:publish --tag=facegen`
+
 ## Comandos
 
 ### Migration

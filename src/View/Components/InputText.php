@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Facegen;
 
 use Illuminate\View\Component;
 
@@ -15,7 +15,7 @@ class InputText extends Component
      *
      * @return void
      */
-    public function __construct($label, $name, $value)
+    public function __construct($label, $name, $value = null)
     {
         $this->label = $label;
         $this->name = $name;
@@ -29,6 +29,6 @@ class InputText extends Component
      */
     public function render()
     {
-        return view('components.input-text');
+        return view('components.facegen.input-text');
     }
 }

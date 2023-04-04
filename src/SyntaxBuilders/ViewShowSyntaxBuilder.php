@@ -33,6 +33,6 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
 
     private function addColumn(array $field): string
     {
-        return sprintf("<x-info-label label=%s :name=%s->%s />", '"'.Str::studly($field['name']).'"', '"${{singularName}}', Str::studly($field['name']).'"');
+        return sprintf("<x-facegen.info-label label=%s :name=%s->%s />", '"'.Str::studly($field['name']).'"', '"${{singularName}}', Str::studly($field['name']).'"');
     }
 }

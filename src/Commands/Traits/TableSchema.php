@@ -4,6 +4,7 @@ namespace FaceDigital\FaceGen\Commands\Traits;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 trait TableSchema
 {
@@ -36,7 +37,7 @@ trait TableSchema
         $colDefault = $doctrineColumn->getDefault();
 
         $columnAtributes = (object) [
-            "name"          => $column->getName(),
+            "name"          => Str::lower($column->getName()),
             "type"          => $colType ? ':'.$colType : '',
             "length"        => $doctrineColumn->getLength() ? '('.$doctrineColumn->getLength().')' : '',
             "unsigned"      => $doctrineColumn->getUnsigned() ? ':unsigned' : '',

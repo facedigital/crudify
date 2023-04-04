@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Facegen;
 
 use Illuminate\View\Component;
 
@@ -26,6 +26,6 @@ class InfoLabel extends Component
      */
     public function render()
     {
-        return view('components.info-label');
+        return view('components.facegen.info-label');
     }
 }

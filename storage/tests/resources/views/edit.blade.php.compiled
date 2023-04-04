@@ -9,10 +9,10 @@
             @csrf
             @method('PUT')
 
-            <x-input-text :value="$post->title" name='title' label='Title' />
-            <x-input-text :value="$post->subtitle" name='subtitle' label='Subtitle' />
-            <x-input-text :value="$post->content" name='content' label='Content' />
-            <x-input-text :value="$post->user_id" name='user_id' label='UserId' />
+            <x-facegen.input-text :value="$post->title" name='title' label='Title' />
+            <x-facegen.input-text :value="$post->subtitle" name='subtitle' label='Subtitle' />
+            <x-facegen.input-text :value="$post->content" name='content' label='Content' />
+            <x-facegen.input-text :value="$post->user_id" name='user_id' label='UserId' />
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Salvar</button>
