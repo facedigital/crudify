@@ -13,6 +13,12 @@ class {{modelName}}Controller extends Controller
         return view('{{pluralName}}.index', compact('{{pluralName}}'));
     }
 
+    public function show($id)
+    {
+        ${{singularName}} = {{modelName}}::find($id);
+        return view('{{pluralName}}.show', compact('{{singularName}}'));
+    }
+
     public function create()
     {
         return view('{{pluralName}}.create');
