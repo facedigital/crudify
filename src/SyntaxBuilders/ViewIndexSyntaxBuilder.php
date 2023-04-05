@@ -11,7 +11,7 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
 
     protected function into(string $wrapper): string
     {
-        return str_replace(['{{column}}', '{{row}}'], $this->template, $wrapper);
+        return str_replace(['{{column}}', '{{row}}', '{{colsSize}}'], $this->template, $wrapper);
     }
 
     protected function getSchemaWrapper(): string
@@ -34,6 +34,8 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
         );
 
         $template['row'] = implode("\n".str_repeat(' ', 16), $fields);
+
+        $template['colsSize'] = count($fields) + 1;
 
         return $template;
     }
