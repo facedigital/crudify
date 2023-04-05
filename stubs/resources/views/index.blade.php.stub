@@ -3,7 +3,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container">
+    <div class="p-8">
         <h2>{{modelName}}</h2>
 
         @if ($message = Session::get('success'))
@@ -12,27 +12,28 @@
             </div>
         @endif
 
-        <table class="table table-bordered">
-            <tr>
-                {{column}}
-                <th width="280px">Ações</th>
-            </tr>
-
-            @foreach (${{pluralName}} as ${{singularName}})
-            <tr>
-                {{row}}
-                <td>
-                    <form action="{{ route('{{pluralName}}.destroy', ${{singularName}}->id) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('{{pluralName}}.show', ${{singularName}}->id) }}">Ver</a>
-                        <a class="btn btn-primary" href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}">Editar</a>
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </table>
+        <div class="flex justify-center">
+            <ul class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <li class="grid grid-cols-9 my-1">
+                    {{column}}
+                    <div class="px-4 py-2">Ações</div>
+                </li>
+                @foreach (${{pluralName}} as ${{singularName}})
+                    <li class="bg-white grid grid-cols-9 border my-1 rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        {{row}}
+                        <div class="px-4 py-2">
+                            <form action="{{ route('{{pluralName}}.destroy', ${{singularName}}->id) }}" method="POST">
+                                <a class="btn btn-info" href="{{ route('{{pluralName}}.show', ${{singularName}}->id) }}">Ver</a>
+                                <a class="btn btn-primary" href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}">Editar</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
 
         <div class="d-flex justify-content-center">
             {!! ${{pluralName}}->links() !!}

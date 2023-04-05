@@ -40,11 +40,11 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
 
     private function addColumn(array $field): string
     {
-        return sprintf("<th>%s</th>", Str::studly($field['name']));
+        return sprintf("<div class='px-4 py-2'>%s</div>", Str::studly($field['name']));
     }
 
     private function addRow(array $field): string
     {
-        return sprintf("<td>{{ $%s->%s }}</td>", '{{singularName}}', $field['name']);
+        return sprintf("<div class='px-4 py-2'>{{ $%s->%s }}</div>", '{{singularName}}', $field['name']);
     }
 }
