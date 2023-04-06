@@ -4,6 +4,7 @@ namespace FaceDigital\FaceGen\Providers;
 
 use FaceDigital\FaceGen\Commands\AllCommand;
 use FaceDigital\FaceGen\Commands\ControllerCommand;
+use FaceDigital\FaceGen\Commands\StoreRequestCommand;
 use FaceDigital\FaceGen\Commands\FactoryCommand;
 use FaceDigital\FaceGen\Commands\MigrationCommand;
 use FaceDigital\FaceGen\Commands\ModelCommand;
@@ -48,6 +49,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
                 FactoryCommand::class,
                 ModelCommand::class,
                 ControllerCommand::class,
+                StoreRequestCommand::class,
                 ViewIndexCommand::class,
                 ViewCreateCommand::class,
                 ViewEditCommand::class,
@@ -64,6 +66,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             FactoryCommand::class,
             ModelCommand::class,
             ControllerCommand::class,
+            StoreRequestCommand::class,
             ViewIndexCommand::class,
             ViewCreateCommand::class,
             ViewEditCommand::class,

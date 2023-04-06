@@ -62,6 +62,10 @@ class AllCommand extends Command
             $this->callController($tableName, $schemaOption);
         }
 
+        if (!$except || !in_array('store-request', $except)) {
+            $this->callStoreRequest($tableName, $schemaOption);
+        }
+
         if (!$except || !in_array('views', $except)) {
             $this->callViews($tableName, $schemaOption);
         }
@@ -89,6 +93,12 @@ class AllCommand extends Command
     {
         $this->call("facegen:controller", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Controller Created!");
+    }
+
+    private function callStoreRequest(string $tableName, string $schemaOption): void
+    {
+        $this->call("facegen:storereq", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->line("Store Request Created!");
     }
 
     private function callViews(string $tableName, string $schemaOption): void
