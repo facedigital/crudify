@@ -33,7 +33,7 @@ class ViewCreateSyntaxBuilder extends SyntaxBuilder
 
     private function addColumn(array $field): string
     {
-        return sprintf("%s name='%s' label='%s' />", $this->inputType($field), $field['name'], Str::studly($field['name']));
+        return sprintf("%s name='%s' label='%s' value='' />", $this->inputType($field), $field['name'], Str::studly($field['name']));
     }
 
     private function inputType(array $field): string

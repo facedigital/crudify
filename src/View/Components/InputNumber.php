@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Facegen;
 
 use Illuminate\View\Component;
 
@@ -29,6 +29,6 @@ class InputNumber extends Component
      */
     public function render()
     {
-        return view('components.input-number');
+        return view('components.facegen.input-number');
     }
 }
