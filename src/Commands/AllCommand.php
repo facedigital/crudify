@@ -46,7 +46,7 @@ class AllCommand extends Command
         $timestamp = $this->option('timestamp') ? $this->option('timestamp') : null;
         $except = $this->option('except');
 
-        if (!$except || !in_array('migration', $except)) {
+        if ((!$except || !in_array('migration', $except)) && $this->option('schema')) {
             $this->callMigration($tableName, $schemaOption, $timestamp);
         }
 
