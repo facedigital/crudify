@@ -1,4 +1,4 @@
-<div class="form-group">
+<div>
     <strong>{{ $label }}:</strong>
     {{ $value }}
 </div>
