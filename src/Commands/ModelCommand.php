@@ -28,6 +28,11 @@ class ModelCommand extends GeneratorCommand
 
         $content = str_replace('{{modelName}}', $this->modelName(), $content);
 
+        $protectedTable = $this->option('schema') ? $this->tableName() : $this->argument('name');
+
+        $content = str_replace('{{tableName}}', $protectedTable, $content);
+
+
         return $content;
     }
 
