@@ -1,17 +1,17 @@
 <?php
 
-namespace FaceDigital\FaceGen\Providers;
+namespace FaceDigital\Crudify\Providers;
 
-use FaceDigital\FaceGen\Commands\AllCommand;
-use FaceDigital\FaceGen\Commands\ControllerCommand;
-use FaceDigital\FaceGen\Commands\StoreRequestCommand;
-use FaceDigital\FaceGen\Commands\FactoryCommand;
-use FaceDigital\FaceGen\Commands\MigrationCommand;
-use FaceDigital\FaceGen\Commands\ModelCommand;
-use FaceDigital\FaceGen\Commands\Views\ViewIndexCommand;
-use FaceDigital\FaceGen\Commands\Views\ViewCreateCommand;
-use FaceDigital\FaceGen\Commands\Views\ViewEditCommand;
-use FaceDigital\FaceGen\Commands\Views\ViewShowCommand;
+use FaceDigital\Crudify\Commands\AllCommand;
+use FaceDigital\Crudify\Commands\ControllerCommand;
+use FaceDigital\Crudify\Commands\StoreRequestCommand;
+use FaceDigital\Crudify\Commands\FactoryCommand;
+use FaceDigital\Crudify\Commands\MigrationCommand;
+use FaceDigital\Crudify\Commands\ModelCommand;
+use FaceDigital\Crudify\Commands\Views\ViewIndexCommand;
+use FaceDigital\Crudify\Commands\Views\ViewCreateCommand;
+use FaceDigital\Crudify\Commands\Views\ViewEditCommand;
+use FaceDigital\Crudify\Commands\Views\ViewShowCommand;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 

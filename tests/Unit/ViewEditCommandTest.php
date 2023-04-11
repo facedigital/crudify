@@ -1,9 +1,9 @@
 <?php
 
-namespace FaceDigital\FaceGen\Tests\Unit;
+namespace FaceDigital\Crudify\Tests\Unit;
 
-use FaceDigital\FaceGen\Commands\Views\ViewEditCommand;
-use FaceDigital\FaceGen\Tests\TestCase;
+use FaceDigital\Crudify\Commands\Views\ViewEditCommand;
+use FaceDigital\Crudify\Tests\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 
 class ViewEditCommandTest extends TestCase

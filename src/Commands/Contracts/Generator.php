@@ -1,6 +1,6 @@
 <?php
 
-namespace FaceDigital\FaceGen\Commands\Contracts;
+namespace FaceDigital\Crudify\Commands\Contracts;
 
 interface Generator
 {

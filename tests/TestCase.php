@@ -1,8 +1,8 @@
 <?php
 
-namespace FaceDigital\FaceGen\Tests;
+namespace FaceDigital\Crudify\Tests;
 
-use FaceDigital\FaceGen\Providers\FaceGenServiceProvider;
+use FaceDigital\Crudify\Providers\FaceGenServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

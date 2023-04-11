@@ -1,8 +1,8 @@
 <?php
 
-namespace FaceDigital\FaceGen\Tests\Unit;
+namespace FaceDigital\Crudify\Tests\Unit;
 
-use FaceDigital\FaceGen\Tests\TestCase;
+use FaceDigital\Crudify\Tests\TestCase;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

@@ -1,9 +1,9 @@
 <?php
-namespace FaceDigital\FaceGen\Commands\Views;
+namespace FaceDigital\Crudify\Commands\Views;
 
-use FaceDigital\FaceGen\Parsers\SchemaParser;
-use FaceDigital\FaceGen\SyntaxBuilders\ViewShowSyntaxBuilder;
-use FaceDigital\FaceGen\Commands\GeneratorCommand;
+use FaceDigital\Crudify\Parsers\SchemaParser;
+use FaceDigital\Crudify\SyntaxBuilders\ViewShowSyntaxBuilder;
+use FaceDigital\Crudify\Commands\GeneratorCommand;
 
 class ViewShowCommand extends GeneratorCommand
 {

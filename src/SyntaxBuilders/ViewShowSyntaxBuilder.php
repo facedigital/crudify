@@ -1,8 +1,8 @@
 <?php
 
-namespace FaceDigital\FaceGen\SyntaxBuilders;
+namespace FaceDigital\Crudify\SyntaxBuilders;
 
-use FaceDigital\FaceGen\Commands\Traits\NamingConvention;
+use FaceDigital\Crudify\Commands\Traits\NamingConvention;
 use Illuminate\Support\Str;
 
 class ViewShowSyntaxBuilder extends SyntaxBuilder

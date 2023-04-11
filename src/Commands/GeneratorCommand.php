@@ -1,10 +1,10 @@
 <?php
 
-namespace FaceDigital\FaceGen\Commands;
+namespace FaceDigital\Crudify\Commands;
 
-use FaceDigital\FaceGen\Commands\Contracts\Generator;
-use FaceDigital\FaceGen\Commands\Traits\NamingConvention;
-use FaceDigital\FaceGen\Commands\Traits\TableSchema;
+use FaceDigital\Crudify\Commands\Contracts\Generator;
+use FaceDigital\Crudify\Commands\Traits\NamingConvention;
+use FaceDigital\Crudify\Commands\Traits\TableSchema;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;

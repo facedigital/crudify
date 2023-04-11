@@ -1,9 +1,9 @@
 <?php
 
-namespace FaceDigital\FaceGen\Tests\Unit;
+namespace FaceDigital\Crudify\Tests\Unit;
 
-use FaceDigital\FaceGen\Commands\FactoryCommand;
-use FaceDigital\FaceGen\Tests\TestCase;
+use FaceDigital\Crudify\Commands\FactoryCommand;
+use FaceDigital\Crudify\Tests\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 
 class FactoryCommandTest extends TestCase

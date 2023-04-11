@@ -1,8 +1,8 @@
 <?php
-namespace FaceDigital\FaceGen\Commands;
+namespace FaceDigital\Crudify\Commands;
 
-use FaceDigital\FaceGen\Parsers\SchemaParser;
-use FaceDigital\FaceGen\SyntaxBuilders\MigrationSyntaxBuilder;
+use FaceDigital\Crudify\Parsers\SchemaParser;
+use FaceDigital\Crudify\SyntaxBuilders\MigrationSyntaxBuilder;
 
 class MigrationCommand extends GeneratorCommand
 {

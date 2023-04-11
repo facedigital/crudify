@@ -1,6 +1,6 @@
 <?php
 
-namespace FaceDigital\FaceGen\Commands\Traits;
+namespace FaceDigital\Crudify\Commands\Traits;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;

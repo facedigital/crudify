@@ -1,6 +1,6 @@
 <?php
 
-namespace FaceDigital\FaceGen\SyntaxBuilders;
+namespace FaceDigital\Crudify\SyntaxBuilders;
 
 class MigrationSyntaxBuilder extends SyntaxBuilder
 {

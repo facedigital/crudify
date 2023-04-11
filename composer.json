@@ -18,18 +18,18 @@
     },
     "autoload": {
         "psr-4": {
-            "FaceDigital\\FaceGen\\": "src/"
+            "FaceDigital\\Crudify\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FaceDigital\\FaceGen\\Tests\\": "tests/"
+            "FaceDigital\\Crudify\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "FaceDigital\\FaceGen\\Providers\\FaceGenServiceProvider"
+                "FaceDigital\\Crudify\\Providers\\FaceGenServiceProvider"
             ]
         }
     }

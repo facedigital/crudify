@@ -1,6 +1,6 @@
 <?php
 
-namespace FaceDigital\FaceGen\Parsers;
+namespace FaceDigital\Crudify\Parsers;
 
 use Illuminate\Support\Str;
 

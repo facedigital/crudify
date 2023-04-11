@@ -1,8 +1,8 @@
 <?php
-namespace FaceDigital\FaceGen\Commands;
+namespace FaceDigital\Crudify\Commands;
 
 use Illuminate\Console\Command;
-use FaceDigital\FaceGen\Commands\Traits\TableSchema;
+use FaceDigital\Crudify\Commands\Traits\TableSchema;
 
 class AllCommand extends Command
 {
