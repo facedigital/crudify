@@ -82,13 +82,13 @@ After installation run the command:
 Creates all files based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:all post --schema "title:string, subtitle:string:nullable, content:text"
+php artisan crudify:all post --schema "title:string, subtitle:string:nullable, content:text"
 ```
 
 Creates all files based on an existing table in the database.
 
 ```bash
-crudify:migration post
+php artisan crudify:migration post
 ```
 
 Created Files:
@@ -106,13 +106,13 @@ Created Files:
 Creates a migration based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:migration post --schema "title:string, subtitle:string:nullable, content:text"
+php artisan crudify:migration post --schema "title:string, subtitle:string:nullable, content:text"
 ```
 
 Creates a migration based on an existing table in the database.
 
 ```bash
-crudify:migration post
+php artisan crudify:migration post
 ```
 Created Files:
 - [x] Migration
@@ -122,13 +122,13 @@ Created Files:
 Creates a factory based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:factory post --schema 'title:string, subtitle:string:nullable, content:text'
+php artisan crudify:factory post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Creates a factory based on an existing table in the database.
 
 ```bash
-crudify:factory post
+php artisan crudify:factory post
 ```
 
 Created Files:
@@ -139,13 +139,13 @@ Created Files:
 Creates a model based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:model post --schema 'title:string, subtitle:string:nullable, content:text'
+php artisan crudify:model post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Creates a model based on an existing table in the database.
 
 ```bash
-crudify:model post
+php artisan crudify:model post
 ```
 
 Created Files:
@@ -156,13 +156,13 @@ Created Files:
 Creates a controller based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:controller post --schema 'title:string, subtitle:string:nullable, content:text'
+php artisan crudify:controller post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Creates a controller based on an existing table in the database.
 
 ```bash
-crudify:controller post
+php artisan crudify:controller post
 ```
 
 Created Files:
@@ -173,13 +173,13 @@ Created Files:
 Creates a view based on the `name` and `--schema` that are passed as a parameter.
 
 ```bash
-crudify:index post --schema 'title:string, subtitle:string:nullable, content:text'
+php artisan crudify:index post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Creates a view based on an existing table in the database.
 
 ```bash
-crudify:index post
+php artisan crudify:index post
 ```
 
 Created Files:
