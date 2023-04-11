@@ -2,8 +2,6 @@
 
 namespace FaceDigital\Crudify\SyntaxBuilders;
 
-use Illuminate\Support\Str;
-
 class ControllerSyntaxBuilder extends SyntaxBuilder
 {
     protected function into(string $wrapper): string

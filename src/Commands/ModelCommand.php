@@ -8,8 +8,7 @@ class ModelCommand extends GeneratorCommand
 {
     protected $signature = 'crudify:model
     { name : resource name(singular) }
-    {--schema= : Schema options}
-    {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';
+    {--schema= : Schema options}';
 
     protected $description = 'Cria uma nova model e aplica o schema';
 

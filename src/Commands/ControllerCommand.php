@@ -8,8 +8,7 @@ class ControllerCommand extends GeneratorCommand
 {
     protected $signature = 'crudify:controller
     { name : resource name(singular) }
-    {--schema= : Schema options}
-    {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';
+    {--schema= : Schema options}';
 
     protected $description = 'Cria um novo controller e aplica o schema';
 

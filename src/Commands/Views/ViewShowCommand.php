@@ -9,8 +9,7 @@ class ViewShowCommand extends GeneratorCommand
 {
     protected $signature = 'crudify:show
     { name : resource name(singular) }
-    {--schema= : Schema options}
-    {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';
+    {--schema= : Schema options}';
 
     protected $description = 'Cria uma nova view e aplica o schema';
 
