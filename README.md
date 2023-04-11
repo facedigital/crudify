@@ -22,7 +22,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<details open>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -31,11 +31,10 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -45,7 +44,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This Package is developed by Face Digital and implements a CRUD generator for Laravel Framework based on schema passed by CLI option or table existing in the database. Ideal for laravel projects with legacy database.
+
+This Package is developed by Face Digital and implements a CRUD generator for Laravel Framework designed to simplify CRUD operations by automatically generating code based on existing schemas or tables in a database. It is particularly well-suited for Laravel projects that rely on legacy databases. With this package, developers can quickly create, read, update, and delete data without the need for manual coding.
+
+Note: As an early version this tool still has a lot of limitations but it can be improved with community contributions.
 
 ## Installation
 Installing from Git repository. Add these lines to the project's `composer.json`.
