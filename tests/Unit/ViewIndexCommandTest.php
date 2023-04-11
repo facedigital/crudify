@@ -20,7 +20,7 @@ class ViewIndexCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:index', [
+        $this->artisan('crudify:index', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -41,7 +41,7 @@ class ViewIndexCommandTest extends TestCase
         $path = resource_path("views/posts/{$filename}");
 
 
-        $this->artisan('facegen:index', [
+        $this->artisan('crudify:index', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -61,7 +61,7 @@ class ViewIndexCommandTest extends TestCase
         $viewIndexCommand = $this->app->make(ViewIndexCommand::class);
 
         $parameters = [
-            'facegen:index',
+            'crudify:index',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];

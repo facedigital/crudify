@@ -5,7 +5,7 @@ Instalando a partir de repositório privado. Adicionar estas linhas no `composer
 
 ```json
 "require": {
-    "facedigital/facegen": "*"
+    "facedigital/crudify": "*"
 }
 ```
 Caso não seja informada a versão será instalada a branch master.
@@ -21,7 +21,7 @@ Caso não seja informada a versão será instalada a branch master.
 
 Após a instalação rodar o comando:
 
-`php artisan vendor:publish --tag=facegen`
+`php artisan vendor:publish --tag=crudify`
 
 ## Comandos
 
@@ -30,13 +30,13 @@ Após a instalação rodar o comando:
 Cria uma migration com base no `name` e no `--schema` que forem passados como parametro.
 
 ```bash
-facegen:migration post --schema 'title:string, subtitle:string:nullable, content:text'
+crudify:migration post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Cria uma migration com base em uma tabela já existente no banco de dados.
 
 ```bash
-facegen:migration post
+crudify:migration post
 ```
 
 ### Factory
@@ -44,13 +44,13 @@ facegen:migration post
 Cria uma factory com base no `name` e no `--schema` que forem passados como parametro.
 
 ```bash
-facegen:factory post --schema 'title:string, subtitle:string:nullable, content:text'
+crudify:factory post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Cria uma factory com base em uma tabela já existente no banco de dados.
 
 ```bash
-facegen:factory post
+crudify:factory post
 ```
 
 ### Model
@@ -58,13 +58,13 @@ facegen:factory post
 Cria um model com base no `name` e no `--schema` que forem passados como parametro.
 
 ```bash
-facegen:model post --schema 'title:string, subtitle:string:nullable, content:text'
+crudify:model post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Cria uma model com base em uma tabela já existente no banco de dados.
 
 ```bash
-facegen:model post
+crudify:model post
 ```
 
 ### Controller
@@ -72,13 +72,13 @@ facegen:model post
 Cria um controller com base no `name` e no `--schema` que forem passados como parametro.
 
 ```bash
-facegen:controller post --schema 'title:string, subtitle:string:nullable, content:text'
+crudify:controller post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Cria uma controller com base em uma tabela já existente no banco de dados.
 
 ```bash
-facegen:controller post
+crudify:controller post
 ```
 
 ### Views
@@ -86,11 +86,11 @@ facegen:controller post
 Cria um view com base no `name` e no `--schema` que forem passados como parametro.
 
 ```bash
-facegen:index post --schema 'title:string, subtitle:string:nullable, content:text'
+crudify:index post --schema 'title:string, subtitle:string:nullable, content:text'
 ```
 
 Cria uma view com base em uma tabela já existente no banco de dados.
 
 ```bash
-facegen:index post
+crudify:index post
 ```

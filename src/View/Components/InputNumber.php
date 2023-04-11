@@ -29,6 +29,6 @@ class InputNumber extends Component
      */
     public function render()
     {
-        return view('components.facegen.input-number');
+        return view('components.crudify.input-number');
     }
 }

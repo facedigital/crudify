@@ -20,7 +20,7 @@ class FactoryCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:factory', [
+        $this->artisan('crudify:factory', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -39,7 +39,7 @@ class FactoryCommandTest extends TestCase
         $classname = 'PostFactory';
         $filename = $classname.'.php';
 
-        $this->artisan('facegen:factory', [
+        $this->artisan('crudify:factory', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -59,7 +59,7 @@ class FactoryCommandTest extends TestCase
         $factoryCommand = $this->app->make(FactoryCommand::class);
 
         $parameters = [
-            'facegen:factory',
+            'crudify:factory',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];
@@ -79,7 +79,7 @@ class FactoryCommandTest extends TestCase
         $factoryCommand = $this->app->make(FactoryCommand::class);
 
         $parameters = [
-            'facegen:factory',
+            'crudify:factory',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:unsignedBigInteger:foreign'
         ];

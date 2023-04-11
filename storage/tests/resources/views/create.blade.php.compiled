@@ -12,10 +12,10 @@
                         <form method="POST" action="{{ route('posts.store') }}">
                             @csrf
 
-                            <x-facegen.input-text name='title' label='Title' />
-                            <x-facegen.input-text name='subtitle' label='Subtitle' />
-                            <x-facegen.input-text name='content' label='Content' />
-                            <x-facegen.input-text name='user_id' label='UserId' />
+                            <x-crudify.input-text name='title' label='Title' />
+                            <x-crudify.input-text name='subtitle' label='Subtitle' />
+                            <x-crudify.input-text name='content' label='Content' />
+                            <x-crudify.input-text name='user_id' label='UserId' />
 
                             <button type="submit" class="btn btn-primary">Salvar</button>
                         </form>

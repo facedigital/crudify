@@ -20,7 +20,7 @@ class ModelCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:model', [
+        $this->artisan('crudify:model', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -39,7 +39,7 @@ class ModelCommandTest extends TestCase
         $classname = 'Post';
         $filename = $classname.'.php';
 
-        $this->artisan('facegen:model', [
+        $this->artisan('crudify:model', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text, user_id:foreignId:constrained'
         ])
@@ -59,7 +59,7 @@ class ModelCommandTest extends TestCase
         $modelCommand = $this->app->make(ModelCommand::class);
 
         $parameters = [
-            'facegen:model',
+            'crudify:model',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreignId:constrained'
         ];

@@ -8,13 +8,13 @@ class AllCommand extends Command
 {
     use TableSchema;
 
-    protected $signature = 'facegen:all
+    protected $signature = 'crudify:all
     { name : resource name(singular) }
     {--schema= : Schema options}
     {--except= : O que não quer que não seja gerado (Optional)}
     {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';
 
-    protected $description = 'Executa todos os comandos facegen';
+    protected $description = 'Executa todos os comandos crudify';
 
     public function handle(): void
     {
@@ -73,46 +73,46 @@ class AllCommand extends Command
 
     private function callMigration(string $tableName, string $schemaOption, string $timestamp): void
     {
-        $this->call("facegen:migration", ['name' => $tableName, '--schema' => $schemaOption, '--timestamp' => $timestamp]);
+        $this->call("crudify:migration", ['name' => $tableName, '--schema' => $schemaOption, '--timestamp' => $timestamp]);
         $this->line("Migration Created!");
     }
 
     private function callFactory(string $tableName, string $schemaOption): void
     {
-        $this->call("facegen:factory", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:factory", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Factory Created!");
     }
 
     private function callModel(string $tableName, string $schemaOption): void
     {
-        $this->call("facegen:model", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:model", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Model Created!");
     }
 
     private function callController(string $tableName, string $schemaOption): void
     {
-        $this->call("facegen:controller", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:controller", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Controller Created!");
     }
 
     private function callStoreRequest(string $tableName, string $schemaOption): void
     {
-        $this->call("facegen:storereq", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:storereq", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Store Request Created!");
     }
 
     private function callViews(string $tableName, string $schemaOption): void
     {
-        $this->call("facegen:index", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:index", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("View index Created!");
 
-        $this->call("facegen:create", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:create", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("View create Created!");
 
-        $this->call("facegen:edit", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:edit", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("View edit Created!");
 
-        $this->call("facegen:show", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->call("crudify:show", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("View show Created!");
     }
 }

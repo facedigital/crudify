@@ -6,7 +6,7 @@ use FaceDigital\FaceGen\SyntaxBuilders\ControllerSyntaxBuilder;
 
 class ControllerCommand extends GeneratorCommand
 {
-    protected $signature = 'facegen:controller
+    protected $signature = 'crudify:controller
     { name : resource name(singular) }
     {--schema= : Schema options}
     {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';

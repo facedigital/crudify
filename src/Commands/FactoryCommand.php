@@ -6,7 +6,7 @@ use FaceDigital\FaceGen\SyntaxBuilders\FactorySyntaxBuilder;
 
 class FactoryCommand extends GeneratorCommand
 {
-    protected $signature = 'facegen:factory
+    protected $signature = 'crudify:factory
     { name : resource name(singular) }
     {--schema= : Schema options}
     {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';

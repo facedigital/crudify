@@ -44,19 +44,19 @@ class FactorySyntaxBuilder extends SyntaxBuilder
     {
         $type = 'text(';
 
-        if (in_array($field['type'], config('facegen.integer_types'))) {
+        if (in_array($field['type'], config('crudify.integer_types'))) {
             $type = 'randomNumber(';
         }
 
-        if (in_array($field['type'], config('facegen.float_types'))) {
+        if (in_array($field['type'], config('crudify.float_types'))) {
             $type = 'randomNumber(';
         }
 
-        if (in_array($field['type'], config('facegen.date_types'))) {
+        if (in_array($field['type'], config('crudify.date_types'))) {
             $type = 'date(';
         }
 
-        if (in_array($field['type'], config('facegen.foreign_types'))) {
+        if (in_array($field['type'], config('crudify.foreign_types'))) {
             $type = 'randomNumber(';
         }
 

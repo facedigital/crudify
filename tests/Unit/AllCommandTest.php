@@ -40,7 +40,7 @@ class AllCommandTest extends TestCase
 
         $viewPath = Str::plural($name);
 
-        $this->artisan('facegen:all', [
+        $this->artisan('crudify:all', [
             'name' => Str::singular($name),
             '--schema' => 'title:string, subtitle:string:nullable, content:text',
             '--timestamp' => $timestamp
@@ -106,7 +106,7 @@ class AllCommandTest extends TestCase
             $table->text('content');
         });
 
-        $this->artisan('facegen:all', [
+        $this->artisan('crudify:all', [
             'name' => Str::plural($name),
             '--timestamp' => $timestamp
         ])
@@ -153,7 +153,7 @@ class AllCommandTest extends TestCase
 
         $viewPath = Str::plural($name);
 
-        $this->artisan('facegen:all', [
+        $this->artisan('crudify:all', [
             'name' => Str::plural($name),
             '--schema' => 'title:string, subtitle:string:nullable, content:text',
             '--except' => ['migration', 'factory']

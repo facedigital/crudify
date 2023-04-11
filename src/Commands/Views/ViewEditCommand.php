@@ -7,7 +7,7 @@ use FaceDigital\FaceGen\Commands\GeneratorCommand;
 
 class ViewEditCommand extends GeneratorCommand
 {
-    protected $signature = 'facegen:edit
+    protected $signature = 'crudify:edit
     { name : resource name(singular) }
     {--schema= : Schema options}
     {--timestamp= : Timestamp ex: 2023_14_16_140039 (Optional)}';

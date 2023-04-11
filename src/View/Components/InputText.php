@@ -29,6 +29,6 @@ class InputText extends Component
      */
     public function render()
     {
-        return view('components.facegen.input-text');
+        return view('components.crudify.input-text');
     }
 }

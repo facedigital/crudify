@@ -26,6 +26,6 @@ class InfoLabel extends Component
      */
     public function render()
     {
-        return view('components.facegen.info-label');
+        return view('components.crudify.info-label');
     }
 }

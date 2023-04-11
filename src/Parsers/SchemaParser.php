@@ -92,11 +92,11 @@ class SchemaParser
             $arguments = explode(',', $matches[2]);
         }
 
-        if (!in_array($type, config('facegen.blueprint_types'))) {
+        if (!in_array($type, config('crudify.blueprint_types'))) {
             throw new \InvalidArgumentException("Collumn type: $type not available");
         }
 
-        $foreign = in_array($type, config('facegen.foreign_types'))
+        $foreign = in_array($type, config('crudify.foreign_types'))
             ? (string) Str::of(str_replace('_id', '', $name))->studly()->singular()
             : null;
 

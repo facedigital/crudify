@@ -20,7 +20,7 @@ class ViewEditCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:edit', [
+        $this->artisan('crudify:edit', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -41,7 +41,7 @@ class ViewEditCommandTest extends TestCase
         $path = resource_path("views/posts/{$filename}");
 
 
-        $this->artisan('facegen:edit', [
+        $this->artisan('crudify:edit', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -61,7 +61,7 @@ class ViewEditCommandTest extends TestCase
         $viewEditCommand = $this->app->make(ViewEditCommand::class);
 
         $parameters = [
-            'facegen:edit',
+            'crudify:edit',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];

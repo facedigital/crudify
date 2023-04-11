@@ -20,7 +20,7 @@ class ViewCreateCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:create', [
+        $this->artisan('crudify:create', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -41,7 +41,7 @@ class ViewCreateCommandTest extends TestCase
         $path = resource_path("views/posts/{$filename}");
 
 
-        $this->artisan('facegen:create', [
+        $this->artisan('crudify:create', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -61,7 +61,7 @@ class ViewCreateCommandTest extends TestCase
         $viewCreateCommand = $this->app->make(ViewCreateCommand::class);
 
         $parameters = [
-            'facegen:create',
+            'crudify:create',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];

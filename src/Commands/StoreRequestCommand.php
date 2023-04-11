@@ -6,7 +6,7 @@ use FaceDigital\FaceGen\SyntaxBuilders\StoreRequestSyntaxBuilder;
 
 class StoreRequestCommand extends GeneratorCommand
 {
-    protected $signature = 'facegen:storereq
+    protected $signature = 'crudify:storereq
     { name : resource name(singular) }
     {--schema= : Schema options}';
 

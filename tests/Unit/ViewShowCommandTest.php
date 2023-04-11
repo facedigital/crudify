@@ -20,7 +20,7 @@ class ViewShowCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:show', [
+        $this->artisan('crudify:show', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -41,7 +41,7 @@ class ViewShowCommandTest extends TestCase
         $path = resource_path("views/posts/{$filename}");
 
 
-        $this->artisan('facegen:show', [
+        $this->artisan('crudify:show', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -61,7 +61,7 @@ class ViewShowCommandTest extends TestCase
         $viewCreateCommand = $this->app->make(ViewShowCommand::class);
 
         $parameters = [
-            'facegen:show',
+            'crudify:show',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];

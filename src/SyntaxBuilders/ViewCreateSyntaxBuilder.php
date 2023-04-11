@@ -38,18 +38,18 @@ class ViewCreateSyntaxBuilder extends SyntaxBuilder
 
     private function inputType(array $field): string
     {
-        $type = '<x-facegen.input-text';
+        $type = '<x-crudify.input-text';
 
-        if (in_array($field['type'], config('facegen.string_types'))) {
-            $type = '<x-facegen.input-text';
+        if (in_array($field['type'], config('crudify.string_types'))) {
+            $type = '<x-crudify.input-text';
         }
 
-        if (in_array($field['type'], config('facegen.integer_types'))) {
-            $type = '<x-facegen.input-number';
+        if (in_array($field['type'], config('crudify.integer_types'))) {
+            $type = '<x-crudify.input-number';
         }
 
-        if (in_array($field['type'], config('facegen.date_types'))) {
-            $type = '<x-facegen.input-date';
+        if (in_array($field['type'], config('crudify.date_types'))) {
+            $type = '<x-crudify.input-date';
         }
 
         return $type;

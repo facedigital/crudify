@@ -20,7 +20,7 @@ class ControllerCommandTest extends TestCase
         // cria o arquivo
         fopen($path, 'w');
 
-        $this->artisan('facegen:controller', [
+        $this->artisan('crudify:controller', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -39,7 +39,7 @@ class ControllerCommandTest extends TestCase
         $classname = 'PostController';
         $filename = $classname.'.php';
 
-        $this->artisan('facegen:controller', [
+        $this->artisan('crudify:controller', [
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ])
@@ -59,7 +59,7 @@ class ControllerCommandTest extends TestCase
         $controllerCommand = $this->app->make(ControllerCommand::class);
 
         $parameters = [
-            'facegen:controller',
+            'crudify:controller',
             'name' => 'post',
             '--schema' => 'title:string(150), subtitle:string:nullable, content:text, user_id:foreign:constrained'
         ];

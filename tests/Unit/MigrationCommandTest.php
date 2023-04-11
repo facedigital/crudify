@@ -25,7 +25,7 @@ class MigrationCommandTest extends TestCase
             Str::snake($name = 'posts')
         );
 
-        $this->artisan('facegen:migration', [
+        $this->artisan('crudify:migration', [
             'name' => Str::singular($name),
             '--schema' => 'title:string, subtitle:string:nullable, content:text',
             '--timestamp' => $timestamp
@@ -46,7 +46,7 @@ class MigrationCommandTest extends TestCase
         $migrationCommand = $this->app->make(MigrationCommand::class);
 
         $parameters = [
-            'facegen:migration',
+            'crudify:migration',
             'name' => 'post',
             '--schema' => 'title:string, subtitle:string:nullable, content:text'
         ];
@@ -75,7 +75,7 @@ class MigrationCommandTest extends TestCase
         });
 
         $parameters = [
-            'facegen:migration',
+            'crudify:migration',
             'name' => 'posts'
         ];
 
