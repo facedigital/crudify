@@ -1,0 +1,17 @@
+<!-- resources/views/{{pluralName}}/show.blade.php -->
+
+@extends('layouts.master')
+
+@section('content')
+    <div class="p-8 w-full">
+        <h2 class="my-4 font-bold">{{modelName}} Detalhes</h2>
+
+        {{column}}
+
+        <div class="flex my-4">
+            <a href="{{ route('{{pluralName}}.index') }}" class="rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Voltar</a>
+
+            <a href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}" class="ml-4 rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Editar</a>
+        </div>
+    </div>
+@endsection

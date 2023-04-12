@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\{{modelName}};
+use Illuminate\Http\Request;
+use App\Http\Requests\{{modelName}}StoreRequest;
+use App\Http\Requests\{{modelName}}UpdateRequest;
+
+class {{modelName}}Controller extends Controller
+{
+    public function index()
+    {
+        ${{pluralName}} = {{modelName}}::paginate(10);
+        return view('{{pluralName}}.index', compact('{{pluralName}}'));
+    }
+
+    public function show($id)
+    {
+        ${{singularName}} = {{modelName}}::find($id);
+        return view('{{pluralName}}.show', compact('{{singularName}}'));
+    }
+
+    public function create()
+    {
+        return view('{{pluralName}}.create');
+    }
+
+    public function store({{modelName}}StoreRequest $request)
+    {
+        {{modelName}}::create($request->all());
+
+        return redirect()->route('{{pluralName}}.index')
+                         ->with('success', '{{modelName}} created successfully.');
+    }
+
+    public function edit({{modelName}} ${{singularName}})
+    {
+        return view('{{pluralName}}.edit', compact('{{singularName}}'));
+    }
+
+    public function update({{modelName}}UpdateRequest $request, {{modelName}} ${{singularName}})
+    {
+        ${{singularName}}->update($request->all());
+
+        return redirect()->route('{{pluralName}}.index')
+                         ->with('success', '{{modelName}} updated successfully.');
+    }
+
+    public function destroy({{modelName}} ${{singularName}})
+    {
+        ${{singularName}}->delete();
+
+        return redirect()->route('{{pluralName}}.index')
+                         ->with('success', '{{modelName}} deleted successfully.');
+    }
+}
