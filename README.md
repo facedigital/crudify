@@ -195,13 +195,13 @@ Created Files:
 - [x] Add README and basic documentation
 - [x] Add MIT License
 - [x] Add Basic Class Components
-- [ ] CLI Commands
+- [x] CLI Commands
     - [x] Generate All Command
     - [x] Generate Migration Command
     - [x] Generate Model Command
     - [x] Generate Controller Command
     - [x] Generate StoreRequest Command
-    - [ ] Generate UpdateRequest Command
+    - [x] Generate UpdateRequest Command
     - [x] Generate View Index Command
     - [x] Generate View Edit Command
     - [x] Generate View Show Command
