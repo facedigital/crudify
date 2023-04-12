@@ -1,0 +1,36 @@
+{
+    "name": "facedigital/crudify",
+    "description": "Pacote implementa um gerador de CRUD",
+    "authors": [
+        {
+            "name": "Luciano Braga",
+            "email": "lucianobragaweb@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^9.0",
+        "illuminate/console": "^9.27",
+        "doctrine/dbal": "^3.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.7",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "FaceDigital\\Crudify\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FaceDigital\\Crudify\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FaceDigital\\Crudify\\Providers\\FaceGenServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<!-- resources/views/posts/edit.blade.php -->
+
+@extends('layouts.master')
+
+@section('content')
+    <div class="container">
+        <h2>Editar Post</h2>
+        <form method="POST" action="{{ route('posts.update', $post->id) }}">
+            @csrf
+            @method('PUT')
+
+            <x-crudify.input-text :value="$post->title" name='title' label='Title' />
+            <x-crudify.input-text :value="$post->subtitle" name='subtitle' label='Subtitle' />
+            <x-crudify.input-text :value="$post->content" name='content' label='Content' />
+            <x-crudify.input-text :value="$post->user_id" name='user_id' label='UserId' />
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
+@endsection
