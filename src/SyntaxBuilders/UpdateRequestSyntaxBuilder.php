@@ -2,7 +2,7 @@
 
 namespace FaceDigital\Crudify\SyntaxBuilders;
 
-class StoreRequestSyntaxBuilder extends SyntaxBuilder
+class UpdateRequestSyntaxBuilder extends SyntaxBuilder
 {
     protected function into(string $wrapper): string
     {
@@ -11,7 +11,7 @@ class StoreRequestSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/app/Http/Requests/store-request.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/app/Http/Requests/update-request.php.stub');
     }
 
     protected function constructSchema(array $schema): array

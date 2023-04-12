@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\{{modelName}};
 use Illuminate\Http\Request;
+use App\Http\Requests\{{modelName}}StoreRequest;
+use App\Http\Requests\{{modelName}}UpdateRequest;
 
 class {{modelName}}Controller extends Controller
 {
@@ -24,12 +26,8 @@ class {{modelName}}Controller extends Controller
         return view('{{pluralName}}.create');
     }
 
-    public function store(Request $request)
+    public function store({{modelName}}StoreRequest $request)
     {
-        $request->validate([
-            {{column}}
-        ]);
-
         {{modelName}}::create($request->all());
 
         return redirect()->route('{{pluralName}}.index')
@@ -41,12 +39,8 @@ class {{modelName}}Controller extends Controller
         return view('{{pluralName}}.edit', compact('{{singularName}}'));
     }
 
-    public function update(Request $request, {{modelName}} ${{singularName}})
+    public function update({{modelName}}UpdateRequest $request, {{modelName}} ${{singularName}})
     {
-        $request->validate([
-            {{column}}
-        ]);
-
         ${{singularName}}->update($request->all());
 
         return redirect()->route('{{pluralName}}.index')

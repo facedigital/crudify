@@ -2,17 +2,17 @@
 namespace FaceDigital\Crudify\Commands;
 
 use FaceDigital\Crudify\Parsers\SchemaParser;
-use FaceDigital\Crudify\SyntaxBuilders\StoreRequestSyntaxBuilder;
+use FaceDigital\Crudify\SyntaxBuilders\UpdateRequestSyntaxBuilder;
 
-class StoreRequestCommand extends GeneratorCommand
+class UpdateRequestCommand extends GeneratorCommand
 {
-    protected $signature = 'crudify:storereq
+    protected $signature = 'crudify:updatereq
     { name : resource name(singular) }
     {--schema= : Schema options}';
 
-    protected $description = 'Cria um novo Store Request e aplica o schema';
+    protected $description = 'Cria um novo Update Request e aplica o schema';
 
-    protected string $existsMessage = "Já existe uma Store Request com o mesmo nome.";
+    protected string $existsMessage = "Já existe uma Update Request com o mesmo nome.";
 
     public function compileStub(): string
     {
@@ -23,7 +23,7 @@ class StoreRequestCommand extends GeneratorCommand
         }
 
         $schema = (new SchemaParser())->parse($schemaOption);
-        $content = (new StoreRequestSyntaxBuilder())->create($schema);
+        $content = (new UpdateRequestSyntaxBuilder())->create($schema);
 
         $content = str_replace('{{modelName}}', $this->modelName(), $content);
 
@@ -42,6 +42,6 @@ class StoreRequestCommand extends GeneratorCommand
 
     protected function fileName(): string
     {
-        return sprintf('%sStoreRequest.php', $this->modelName());
+        return sprintf('%sUpdateRequest.php', $this->modelName());
     }
 }

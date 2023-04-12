@@ -66,6 +66,10 @@ class AllCommand extends Command
             $this->callStoreRequest($tableName, $schemaOption);
         }
 
+        if (!$except || !in_array('update-request', $except)) {
+            $this->callUpdateRequest($tableName, $schemaOption);
+        }
+
         if (!$except || !in_array('views', $except)) {
             $this->callViews($tableName, $schemaOption);
         }
@@ -99,6 +103,12 @@ class AllCommand extends Command
     {
         $this->call("crudify:storereq", ['name' => $tableName, '--schema' => $schemaOption]);
         $this->line("Store Request Created!");
+    }
+
+    private function callUpdateRequest(string $tableName, string $schemaOption): void
+    {
+        $this->call("crudify:updatereq", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->line("Update Request Created!");
     }
 
     private function callViews(string $tableName, string $schemaOption): void

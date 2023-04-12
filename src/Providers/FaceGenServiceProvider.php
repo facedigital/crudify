@@ -5,6 +5,7 @@ namespace FaceDigital\Crudify\Providers;
 use FaceDigital\Crudify\Commands\AllCommand;
 use FaceDigital\Crudify\Commands\ControllerCommand;
 use FaceDigital\Crudify\Commands\StoreRequestCommand;
+use FaceDigital\Crudify\Commands\UpdateRequestCommand;
 use FaceDigital\Crudify\Commands\FactoryCommand;
 use FaceDigital\Crudify\Commands\MigrationCommand;
 use FaceDigital\Crudify\Commands\ModelCommand;
@@ -50,6 +51,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
                 ModelCommand::class,
                 ControllerCommand::class,
                 StoreRequestCommand::class,
+                UpdateRequestCommand::class,
                 ViewIndexCommand::class,
                 ViewCreateCommand::class,
                 ViewEditCommand::class,
@@ -67,6 +69,7 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             ModelCommand::class,
             ControllerCommand::class,
             StoreRequestCommand::class,
+            UpdateRequestCommand::class,
             ViewIndexCommand::class,
             ViewCreateCommand::class,
             ViewEditCommand::class,
