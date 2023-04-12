@@ -1,4 +1,4 @@
-# FaceDigital - Crudify for laravel 9.x
+# FACE Digital - Crudify for laravel 9.x
 
 <a href="LICENSE.md" title="MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"></a>
 
@@ -7,7 +7,7 @@
     <img src="crud.png" alt="Logo" width="250">
   </a>
 
-  <h3 align="center">FaceDigital - Crudify</h3>
+  <h3 align="center">FACE Digital - Crudify</h3>
 
   <p align="center">
     Package implements a CRUD generator based on schema or table existing in the database. Ideal for laravel projects with legacy database.
@@ -45,7 +45,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This Package is developed by Face Digital and implements a CRUD generator for Laravel Framework designed to simplify CRUD operations by automatically generating code based on existing schemas or tables in a database. It is particularly well-suited for Laravel projects that rely on legacy databases. With this package, developers can quickly create, read, update, and delete data without the need for manual coding.
+This Package is developed by FACE Digital and implements a CRUD generator for Laravel Framework designed to simplify CRUD operations by automatically generating code based on existing schemas or tables in a database. It is particularly well-suited for Laravel projects that rely on legacy databases. With this package, developers can quickly create, read, update, and delete data without the need for manual coding.
 
 Note: As an early version this tool still has a lot of limitations but it can be improved with community contributions.
 
@@ -229,6 +229,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Face Digital - [facedigital.com.br](https://facedigital.com.br/) - adm@facedigital.com.br
+FACE Digital - [facedigital.com.br](https://facedigital.com.br/) - dev@facedigital.com.br
 
 Project Link: [https://github.com/facedigital/crudify](https://github.com/facedigital/crudify)
