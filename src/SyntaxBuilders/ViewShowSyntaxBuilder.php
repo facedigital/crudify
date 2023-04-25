@@ -26,7 +26,7 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
             array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
         );
 
-        $template['column'] = implode("\n".str_repeat(' ', 8), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 20), $fields);
 
         return $template;
     }
