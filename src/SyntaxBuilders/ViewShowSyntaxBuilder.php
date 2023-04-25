@@ -16,7 +16,7 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/show.blade.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/bootstrap/show.blade.php.stub');
     }
 
     protected function constructSchema(array $schema): array

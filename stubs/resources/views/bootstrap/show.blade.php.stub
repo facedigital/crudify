@@ -1,0 +1,22 @@
+<!-- resources/views/{{pluralName}}/show.blade.php -->
+
+@extends('layouts.master')
+
+@section('content')
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    {{modelName}} Detalhes
+                </div>
+                <div class="card-body">
+                    {{column}}
+                </div>
+                <div class="card-footer">
+                    <a href="{{ route('{{pluralName}}.index') }}" class="btn btn-primary btn-sm">Voltar</a>
+                    <a href="{{ route('{{pluralName}}.edit', $user->id) }}" class="btn btn-secondary btn-sm">Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

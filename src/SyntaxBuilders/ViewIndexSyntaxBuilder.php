@@ -16,7 +16,7 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/index.blade.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/bootstrap/index.blade.php.stub');
     }
 
     protected function constructSchema(array $schema): array
