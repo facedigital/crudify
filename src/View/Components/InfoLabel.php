@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Facegen;
+namespace App\View\Components\Crudify;
 
 use Illuminate\View\Component;
 

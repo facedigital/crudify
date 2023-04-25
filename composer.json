@@ -1,6 +1,6 @@
 {
     "name": "facedigital/crudify",
-    "description": "Pacote implementa um gerador de CRUD",
+    "description": "Assistente perfeito para acelerar o desenvolvimento de projetos com Laravel",
     "authors": [
         {
             "name": "Luciano Braga",
@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FaceDigital\\Crudify\\Providers\\FaceGenServiceProvider"
+                "FaceDigital\\Crudify\\Providers\\CrudifyServiceProvider"
             ]
         }
     }

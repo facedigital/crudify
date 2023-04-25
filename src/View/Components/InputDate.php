@@ -4,7 +4,7 @@ namespace App\View\Components\Crudify;
 
 use Illuminate\View\Component;
 
-class InputNumber extends Component
+class InputDate extends Component
 {
     public $label;
     public $name;
@@ -29,6 +29,6 @@ class InputNumber extends Component
      */
     public function render()
     {
-        return view('components.crudify.input-number');
+        return view('components.crudify.input-date');
     }
 }

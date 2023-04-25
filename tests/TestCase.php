@@ -2,7 +2,7 @@
 
 namespace FaceDigital\Crudify\Tests;
 
-use FaceDigital\Crudify\Providers\FaceGenServiceProvider;
+use FaceDigital\Crudify\Providers\CrudifyServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -13,7 +13,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            FaceGenServiceProvider::class
+            CrudifyServiceProvider::class
         ];
     }
 
