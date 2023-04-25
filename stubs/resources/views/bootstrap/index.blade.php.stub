@@ -15,8 +15,8 @@
                 <div class="card-header text-right">
                     <span>{{modelName}}</span>
                     <a class="btn btn-success btn-sm" href="{{ route('{{pluralName}}.create') }}">
-                            <i class="bi-plus"></i> Novo
-                        </a>
+                        <i class="bi-plus"></i> Novo
+                    </a>
                 </div>
                 <table class="table">
                     <thead>

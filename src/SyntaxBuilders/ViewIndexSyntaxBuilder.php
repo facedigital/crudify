@@ -26,14 +26,14 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
             array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
         );
 
-        $template['column'] = implode("\n".str_repeat(' ', 16), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 32), $fields);
 
         $fields = array_map(
             fn ($field) => $this->addRow($field),
             array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
         );
 
-        $template['row'] = implode("\n".str_repeat(' ', 16), $fields);
+        $template['row'] = implode("\n".str_repeat(' ', 32), $fields);
 
         $template['colsSize'] = count($fields) + 1;
 
