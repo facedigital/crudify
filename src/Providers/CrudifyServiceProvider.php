@@ -31,10 +31,10 @@ class CrudifyServiceProvider extends ServiceProvider implements DeferrableProvid
             self::ROOT_PATH.'/src/View/Components/InputNumber.php' => app_path('View/Components/Crudify/InputNumber.php'),
             self::ROOT_PATH.'/src/View/Components/InputDate.php' => app_path('View/Components/Crudify/InputDate.php'),
             // component views
-            self::ROOT_PATH.'/resources/views/components/info-label.blade.php' => resource_path('views/components/crudify/info-label.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-text.blade.php' => resource_path('views/components/crudify/input-text.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-number.blade.php' => resource_path('views/components/crudify/input-number.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-date.blade.php' => resource_path('views/components/crudify/input-date.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/info-label.blade.php' => resource_path('views/components/crudify/info-label.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-text.blade.php' => resource_path('views/components/crudify/input-text.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-number.blade.php' => resource_path('views/components/crudify/input-number.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-date.blade.php' => resource_path('views/components/crudify/input-date.blade.php'),
         ], 'crudify');
     }
 

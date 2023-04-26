@@ -16,7 +16,7 @@ class ViewCreateSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/bootstrap/create.blade.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/'.config('crudify.theme').'/create.blade.php.stub');
     }
 
     protected function constructSchema(array $schema): array
