@@ -1,13 +1,19 @@
-<!-- resources/views/{{pluralName}}/edit.blade.php -->
+<!-- resources/views/{{pluralName}}/create.blade.php -->
 
 @extends('layouts.master')
 
 @section('content')
     <div class="p-8 w-full">
-        <h2 class="my-4 font-bold">Editar {{modelName}}</h2>
-        <form method="POST" action="{{ route('{{pluralName}}.update', ${{singularName}}->id) }}">
+        <h2 class="my-4 font-bold">Criar {{modelName}}</h2>
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-warning">{{ $error }}</div>
+            @endforeach
+        @endif
+
+        <form method="POST" action="{{ route('{{pluralName}}.store') }}">
             @csrf
-            @method('PUT')
 
             {{column}}
 

@@ -1,7 +1,6 @@
 <?php
 
 namespace FaceDigital\Crudify\SyntaxBuilders;
-
 use FaceDigital\Crudify\Commands\Traits\NamingConvention;
 use Illuminate\Support\Str;
 
@@ -16,7 +15,7 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/show.blade.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/'.config('crudify.theme').'/show.blade.php.stub');
     }
 
     protected function constructSchema(array $schema): array
@@ -26,7 +25,7 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
             array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
         );
 
-        $template['column'] = implode("\n".str_repeat(' ', 8), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 20), $fields);
 
         return $template;
     }

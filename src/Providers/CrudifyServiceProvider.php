@@ -16,7 +16,7 @@ use FaceDigital\Crudify\Commands\Views\ViewShowCommand;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvider
+class CrudifyServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     protected const ROOT_PATH = __DIR__. '/../../';
 
@@ -26,13 +26,15 @@ class FaceGenServiceProvider extends ServiceProvider implements DeferrableProvid
             // config
             self::ROOT_PATH.'/config/crudify.php' => config_path('crudify.php'),
             // class components
-            self::ROOT_PATH.'/src/View/Components/InfoLabel.php' => app_path('View/Components/Facegen/InfoLabel.php'),
-            self::ROOT_PATH.'/src/View/Components/InputText.php' => app_path('View/Components/Facegen/InputText.php'),
-            self::ROOT_PATH.'/src/View/Components/InputNumber.php' => app_path('View/Components/Facegen/InputNumber.php'),
+            self::ROOT_PATH.'/src/View/Components/InfoLabel.php' => app_path('View/Components/Crudify/InfoLabel.php'),
+            self::ROOT_PATH.'/src/View/Components/InputText.php' => app_path('View/Components/Crudify/InputText.php'),
+            self::ROOT_PATH.'/src/View/Components/InputNumber.php' => app_path('View/Components/Crudify/InputNumber.php'),
+            self::ROOT_PATH.'/src/View/Components/InputDate.php' => app_path('View/Components/Crudify/InputDate.php'),
             // component views
-            self::ROOT_PATH.'/resources/views/components/info-label.blade.php' => resource_path('views/components/crudify/info-label.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-text.blade.php' => resource_path('views/components/crudify/input-text.blade.php'),
-            self::ROOT_PATH.'/resources/views/components/input-number.blade.php' => resource_path('views/components/crudify/input-number.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/info-label.blade.php' => resource_path('views/components/crudify/info-label.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-text.blade.php' => resource_path('views/components/crudify/input-text.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-number.blade.php' => resource_path('views/components/crudify/input-number.blade.php'),
+            self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-date.blade.php' => resource_path('views/components/crudify/input-date.blade.php'),
         ], 'crudify');
     }
 

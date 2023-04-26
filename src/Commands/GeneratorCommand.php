@@ -34,17 +34,13 @@ abstract class GeneratorCommand extends Command implements Generator
     {
         $this->line("Creating File: {$this->fileName()}");
 
-        // TODO: Mover para fora
-        // Se não passar o Schema
         if (!$this->option('schema')) {
-            //verifica se a tabela existe
             if (!$this->hasTable()) {
                 $this->warn('A tabela '.$this->argument('name').' não existe no banco de dados');
                 return;
             }
         }
 
-        // verifica se a migration/arquivo/class já existe
         if ($this->alreadyExists()) {
             $this->warn($this->existsMessage);
             return;
@@ -58,14 +54,6 @@ abstract class GeneratorCommand extends Command implements Generator
     protected function generate()
     {
         $this->makeDirectory();
-
-        // TODO: Mover para fora
-        // if (!$this->option('schema')) {
-        //     // ler estrutura da tabela
-        //     $schema = $this->getTableSchema($this->argument('name'));
-        //     // TODO: gerar model, controller e Views com base no Schema
-        //     return $schema;
-        // }
 
         $this->filesystem->put($this->path(), $this->compileStub());
     }

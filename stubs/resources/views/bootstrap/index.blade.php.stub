@@ -1,0 +1,64 @@
+<!-- resources/views/{{pluralName}}/index.blade.php -->
+
+@extends('layouts.master')
+
+@section('content')
+    <div class="row mt-4">
+        <div class="col">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
+
+            <div class="card mb-4">
+                <div class="card-header text-right">
+                    <span>{{modelName}}</span>
+                    <a class="btn btn-success btn-sm" href="{{ route('{{pluralName}}.create') }}">
+                        <i class="bi-plus"></i> Novo
+                    </a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            {{column}}
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (${{pluralName}} as ${{singularName}})
+                            <tr>
+                                {{row}}
+                                <td class="flex">
+                                    <form action="{{ route('{{pluralName}}.destroy', ${{singularName}}->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('{{pluralName}}.show', ${{singularName}}->id) }}">
+                                                <i class="bi-eye"></i>
+                                            </a>
+                                            <a class="btn btn-warning btn-sm" href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}">
+                                                <i class="bi-pencil"></i>
+                                            </a>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este item?')">
+                                                <i class="bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {!! ${{pluralName}}->links() !!}
+        </div>
+    </div>
+@endsection

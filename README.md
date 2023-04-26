@@ -88,19 +88,20 @@ php artisan crudify:all post --schema "title:string, subtitle:string:nullable, c
 Creates all files based on an existing table in the database.
 
 ```bash
-php artisan crudify:migration post
+php artisan crudify:all post
 ```
 
 Created Files:
 - [x] Model
 - [x] Controller
 - [x] StoreRequest
-- [ ] UpdateRequest
+- [x] UpdateRequest
 - [x] Factory
 - [x] View Index
 - [x] View Show
 - [x] View Create
 - [x] View Edit
+
 ### Crudify Migration Command
 
 Creates a migration based on the `name` and `--schema` that are passed as a parameter.
@@ -188,12 +189,21 @@ Created Files:
 - [x] View Create
 - [x] View Edit
 
+### Change Theme
+
+In the config file located at `config/crudify.php` has the `theme` definition.
+
+```php
+'theme' => 'bootstrap' // [bootstrap|tailwind]
+```
+
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Add Changelog
 - [x] Add README and basic documentation
 - [x] Add MIT License
+- [x] Add Theme definition in config
 - [x] Add Basic Class Components
 - [x] CLI Commands
     - [x] Generate All Command

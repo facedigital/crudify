@@ -17,7 +17,7 @@ class StoreRequestSyntaxBuilder extends SyntaxBuilder
     protected function constructSchema(array $schema): array
     {
         $fields = array_map(fn ($field) => $this->addColumn($field), $schema);
-        $template['column'] = implode("\n".str_repeat(' ', 8), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 12), $fields);
 
         return $template;
     }

@@ -1,0 +1,35 @@
+<!-- resources/views/{{pluralName}}/edit.blade.php -->
+
+@extends('layouts.master')
+
+@section('content')
+    <div class="row mt-4">
+        <div class="col">
+             @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-warning">{{ $error }}</div>
+                @endforeach
+            @endif
+
+            <div class="card">
+                <div class="card-header">
+                    Editar {{modelName}}
+                </div>
+
+                <form method="POST" action="{{ route('{{pluralName}}.update', ${{singularName}}->id) }}">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="card-body">
+                        {{column}}
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="{{ route('{{pluralName}}.index') }}" class="btn btn-secondary btn-sm">Cancelar</a>
+                        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection

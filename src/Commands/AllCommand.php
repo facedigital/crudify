@@ -20,9 +20,7 @@ class AllCommand extends Command
     {
         $this->line("Start Generating...");
 
-        // Se não passar o Schema
         if (!$this->option('schema')) {
-            //verifica se a tabela existe
             if (!$this->hasTable()) {
                 $this->warn('A tabela '.$this->argument('name').' não existe no banco de dados');
                 return;
