@@ -16,7 +16,7 @@ class ViewCreateSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/create.blade.php.stub');
+        return file_get_contents(__DIR__ . '/../../stubs/resources/views/bootstrap/create.blade.php.stub');
     }
 
     protected function constructSchema(array $schema): array
@@ -26,7 +26,7 @@ class ViewCreateSyntaxBuilder extends SyntaxBuilder
             array_filter($schema, fn ($field) => !array_key_exists('on', $field['options']))
         );
 
-        $template['column'] = implode("\n".str_repeat(' ', 28), $fields);
+        $template['column'] = implode("\n".str_repeat(' ', 24), $fields);
 
         return $template;
     }
