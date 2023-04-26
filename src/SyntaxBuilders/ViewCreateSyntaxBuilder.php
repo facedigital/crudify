@@ -1,7 +1,6 @@
 <?php
 
 namespace FaceDigital\Crudify\SyntaxBuilders;
-
 use FaceDigital\Crudify\Commands\Traits\NamingConvention;
 use Illuminate\Support\Str;
 

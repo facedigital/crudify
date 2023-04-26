@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'theme' => 'bootstrap',
+    'theme' => 'bootstrap', // [bootstrap|tailwind]
     'blueprint_types' => [
         'increments', 'integerIncrements', 'tinyIncrements', 'smallIncrements', 'mediumIncrements', 'bigIncrements',
         'char', 'string', 'text', 'mediumText', 'longText',

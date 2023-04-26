@@ -20,6 +20,7 @@
 - Added SchemaParser
 - Added Unit Tests
 - Added Basic Class Components
+- Added Theme definition in config
 - Changed package name from crudify
 
 ### Removed
