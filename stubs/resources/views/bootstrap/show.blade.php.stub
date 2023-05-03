@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-footer">
                     <a href="{{ route('{{pluralName}}.index') }}" class="btn btn-primary btn-sm">Voltar</a>
-                    <a href="{{ route('{{pluralName}}.edit', $user->id) }}" class="btn btn-secondary btn-sm">Editar</a>
+                    <a href="{{ route('{{pluralName}}.edit', ${{singularName}}->id) }}" class="btn btn-secondary btn-sm">Editar</a>
                 </div>
             </div>
         </div>
