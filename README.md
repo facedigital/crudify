@@ -3,8 +3,8 @@
 <a href="LICENSE.md" title="MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"></a>
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="crud.png" alt="Logo" width="250">
+  <a href="https://github.com/facedigital/crudify">
+    <img src="assets/images/logo.svg" alt="Logo" width="500" style="padding: 50px;"> 
   </a>
 
   <h3 align="center">FACE Digital - Crudify</h3>
