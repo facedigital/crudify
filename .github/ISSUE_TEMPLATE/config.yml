@@ -2,4 +2,4 @@ blank_issues_enabled: false
 contact_links:
   - name: 🙋 Ask questions on Stack Overflow (preferred)
     url: https://stackoverflow.com/questions/tagged/crudify
-    about: Ask structured and fully-formed questions about Crudify or about building Laravel CRUDs site with Crudify
+    about: Ask structured and fully-formed questions about Crudify or about building Laravel CRUDs with Crudify
