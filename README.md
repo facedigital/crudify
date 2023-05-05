@@ -4,7 +4,11 @@
 
 <div align="center">
   <a href="https://github.com/facedigital/crudify">
-    <img src="assets/images/logo.svg" alt="Logo" width="500" style="padding: 50px;"> 
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/images/logo-white.svg">
+        <source media="(prefers-color-scheme: light)" srcset="assets/images/logo.svg">
+        <img alt="Cudify Logo" src="assets/images/logo.svg" width="500" style="padding: 50px;">
+    </picture>
   </a>
 
   <h3 align="center">FACE Digital - Crudify</h3>

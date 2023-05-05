@@ -1,36 +1,45 @@
 {
-    "name": "facedigital/crudify",
-    "description": "Assistente perfeito para acelerar o desenvolvimento de projetos com Laravel",
-    "authors": [
-        {
-            "name": "Luciano Braga",
-            "email": "lucianobragaweb@gmail.com"
-        }
-    ],
-    "require": {
-        "illuminate/support": "^9.0",
-        "illuminate/console": "^9.27",
-        "doctrine/dbal": "^3.6"
+  "name": "facedigital/crudify",
+  "description": "Perfect assistant to speed up project development with Laravel",
+  "authors": [
+    {
+      "name": "FACE Digital",
+      "email": "dev@facedigital.com.br"
     },
-    "require-dev": {
-        "orchestra/testbench": "^6.7",
-        "phpunit/phpunit": "^9.5"
+    {
+      "name": "Andrei Rosseti",
+      "email": "dev@facedigital.com.br"
     },
-    "autoload": {
-        "psr-4": {
-            "FaceDigital\\Crudify\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "FaceDigital\\Crudify\\Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "FaceDigital\\Crudify\\Providers\\CrudifyServiceProvider"
-            ]
-        }
+    {
+      "name": "Luciano Braga",
+      "email": "lucianobragaweb@gmail.com"
     }
+  ],
+  "require": {
+    "illuminate/support": "^9.0",
+    "illuminate/console": "^9.27",
+    "doctrine/dbal": "^3.6"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "FaceDigital\\Crudify\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FaceDigital\\Crudify\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FaceDigital\\Crudify\\Providers\\CrudifyServiceProvider"
+      ]
+    }
+  },
+  "license": "MIT"
 }
