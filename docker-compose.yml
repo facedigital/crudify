@@ -4,8 +4,11 @@ services:
     web:
         build:
             dockerfile: Dockerfile
+            args:
+                user: crudify
+                uid: 1000
         image: digitalocean.com/php
-        container_name: crud-generators
+        container_name: crudify-package
         restart: unless-stopped
         tty: true
         ports:
