@@ -1,7 +1,10 @@
 # FACE Digital - Crudify for laravel 9.x
 
 <a href="LICENSE.md" title="MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"></a>
-[![Run Tests](https://github.com/lucianobragaweb/crudify/actions/workflows/tests.yml/badge.svg)](https://github.com/lucianobragaweb/crudify/actions/workflows/tests.yml)
+[![Run Tests](https://github.com/facedigital/crudify/actions/workflows/tests.yml/badge.svg)](https://github.com/facedigital/crudify/actions/workflows/tests.yml)
+<a href="https://github.com/facedigital/crudify/issues"><img src="https://img.shields.io/github/issues/facedigital/crudify.svg" alt=""></a>
+<a href="https://github.com/facedigital/crudify/stargazers"><img src="https://img.shields.io/github/stars/facedigital/crudify.svg" alt=""></a>
+<a href="https://github.com/facedigital/crudify/network"><img src="https://img.shields.io/github/forks/facedigital/crudify.svg" alt=""></a>
 
 <div align="center">
   <a href="https://github.com/facedigital/crudify">
