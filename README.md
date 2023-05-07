@@ -58,7 +58,16 @@ This Package is developed by FACE Digital and implements a CRUD generator for La
 Note: As an early version this tool still has a lot of limitations but it can be improved with community contributions.
 
 ## Installation
-Installing from Git repository. Add these lines to the project's `composer.json`.
+
+**Installing from composer. (More Easy)**
+
+```bash
+composer require facedigital/crudify
+```
+
+**Installing from Git repository**
+
+Add these lines to the project's `composer.json`.
 
 
 ```json
