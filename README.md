@@ -2,7 +2,7 @@
 
 <a href="LICENSE.md" title="MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"></a>
 
-![Tests](https://github.com/lucianobragaweb/crudify/workflows/tests.yml/badge.svg)
+![![Run Tests](https://github.com/lucianobragaweb/crudify/actions/workflows/tests.yml/badge.svg)](https://github.com/lucianobragaweb/crudify/actions/workflows/tests.yml)
 
 <div align="center">
   <a href="https://github.com/facedigital/crudify">
