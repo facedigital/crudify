@@ -15,7 +15,9 @@ class ViewShowSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/'.config('crudify.theme').'/show.blade.php.stub');
+        $stub_path = config('crudify.stubs.views.show') ? base_path(config('crudify.stubs.views.show')) : __DIR__.'/../../stubs/resources/views/'.config('crudify.theme').'/show.blade.php.stub';
+
+        return file_get_contents($stub_path);
     }
 
     protected function constructSchema(array $schema): array

@@ -1,6 +1,14 @@
 <?php
 
 return [
+    'stubs' => [
+        'views' => [
+            'index' => null, // [null = default|patch]
+            'create' => null,
+            'edit' => null,
+            'show' => null,
+        ]
+    ],
     'theme' => 'bootstrap', // [bootstrap|tailwind]
     'blueprint_types' => [
         'increments', 'integerIncrements', 'tinyIncrements', 'smallIncrements', 'mediumIncrements', 'bigIncrements',

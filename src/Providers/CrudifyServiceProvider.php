@@ -35,6 +35,11 @@ class CrudifyServiceProvider extends ServiceProvider implements DeferrableProvid
             self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-text.blade.php' => resource_path('views/components/crudify/input-text.blade.php'),
             self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-number.blade.php' => resource_path('views/components/crudify/input-number.blade.php'),
             self::ROOT_PATH.'/resources/views/components/'.config('crudify.theme').'/input-date.blade.php' => resource_path('views/components/crudify/input-date.blade.php'),
+            // View stubs
+            self::ROOT_PATH.'/stubs/resources/views/'.config('crudify.theme').'/create.blade.php.stub' => base_path('stubs/crudify/views/create.blade.php.stub'),
+            self::ROOT_PATH.'/stubs/resources/views/'.config('crudify.theme').'/edit.blade.php.stub' => base_path('stubs/crudify/views/edit.blade.php.stub'),
+            self::ROOT_PATH.'/stubs/resources/views/'.config('crudify.theme').'/index.blade.php.stub' => base_path('stubs/crudify/views/index.blade.php.stub'),
+            self::ROOT_PATH.'/stubs/resources/views/'.config('crudify.theme').'/show.blade.php.stub' => base_path('stubs/crudify/views/show.blade.php.stub'),
         ], 'crudify');
     }
 

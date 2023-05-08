@@ -201,6 +201,19 @@ In the config file located at `config/crudify.php` has the `theme` definition.
 'theme' => 'bootstrap' // [bootstrap|tailwind]
 ```
 
+### Customize Stubs
+
+```php
+'stubs' => [
+    'views' => [
+        'index' => null, // [null = default|project]
+        'create' => 'stubs/crudify/views/create.blade.php.stub',
+        'edit' => null,
+        'show' => null,
+    ]
+],
+```
+
 <!-- ROADMAP -->
 ## Roadmap
 
