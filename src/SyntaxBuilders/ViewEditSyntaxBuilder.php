@@ -15,7 +15,9 @@ class ViewEditSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/'.config('crudify.theme').'/edit.blade.php.stub');
+        $stub_path = config('crudify.stubs.views.edit') ? base_path(config('crudify.stubs.views.edit')) : __DIR__.'/../../stubs/resources/views/'.config('crudify.theme').'/edit.blade.php.stub';
+
+        return file_get_contents($stub_path);
     }
 
     protected function constructSchema(array $schema): array

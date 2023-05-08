@@ -15,7 +15,9 @@ class ViewIndexSyntaxBuilder extends SyntaxBuilder
 
     protected function getSchemaWrapper(): string
     {
-        return file_get_contents(__DIR__ . '/../../stubs/resources/views/'.config('crudify.theme').'/index.blade.php.stub');
+        $stub_path = config('crudify.stubs.views.index') ? base_path(config('crudify.stubs.views.index')) : __DIR__.'/../../stubs/resources/views/'.config('crudify.theme').'/index.blade.php.stub';
+
+        return file_get_contents($stub_path);
     }
 
     protected function constructSchema(array $schema): array
