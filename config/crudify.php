@@ -3,8 +3,8 @@
 return [
     'stubs' => [
         'views' => [
-            'index' => null, // [null = default|project]
-            'create' => 'stubs/crudify/views/create.blade.php.stub',
+            'index' => null, // [null = default|patch]
+            'create' => null,
             'edit' => null,
             'show' => null,
         ]
