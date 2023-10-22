@@ -34,46 +34,68 @@ class AllCommand extends Command
 
     protected function generate()
     {
+
         if (!$this->option('schema')) {
             $schemaOption = $this->getTableSchema($this->argument('name'));
         } else {
             $schemaOption = $this->option('schema');
         }
-
+        dd($schemaOption);
         $tableName = $this->argument('name');
         $timestamp = $this->option('timestamp') ? $this->option('timestamp') : null;
         $except = $this->option('except');
 
-        if ((!$except || !in_array('migration', $except)) && $this->option('schema')) {
-            $this->callMigration($tableName, $schemaOption, $timestamp);
+       if ((!$except || !in_array('migration', $except)) && $this->option('schema')) {
+           $this->callMigration($tableName, $schemaOption, $timestamp);
+       }
+
+       if (!$except || !in_array('factory', $except)) {
+           $this->callFactory($tableName, $schemaOption);
+       }
+
+       if (!$except || !in_array('model', $except)) {
+           $this->callModel($tableName, $schemaOption);
+       }
+
+       if (!$except || !in_array('controller', $except)) {
+            $service = (!$except || !in_array('service', $except)) ? 'y' : null ;
+           $this->callController($tableName, $schemaOption, $service);
+       }
+
+       if (!$except || !in_array('store-request', $except)) {
+           $this->callStoreRequest($tableName, $schemaOption);
+       }
+
+       if (!$except || !in_array('update-request', $except)) {
+           $this->callUpdateRequest($tableName, $schemaOption);
+       }
+
+       if (!$except || !in_array('views', $except)) {
+           $this->callViews($tableName, $schemaOption);
+       }
+
+        if (!$except || !in_array('service', $except)) {
+            $this->callService($tableName, $schemaOption);
         }
 
-        if (!$except || !in_array('factory', $except)) {
-            $this->callFactory($tableName, $schemaOption);
-        }
-
-        if (!$except || !in_array('model', $except)) {
-            $this->callModel($tableName, $schemaOption);
-        }
-
-        if (!$except || !in_array('controller', $except)) {
-            $this->callController($tableName, $schemaOption);
-        }
-
-        if (!$except || !in_array('store-request', $except)) {
-            $this->callStoreRequest($tableName, $schemaOption);
-        }
-
-        if (!$except || !in_array('update-request', $except)) {
-            $this->callUpdateRequest($tableName, $schemaOption);
-        }
-
-        if (!$except || !in_array('views', $except)) {
-            $this->callViews($tableName, $schemaOption);
+        if (!$except || !in_array('repository', $except)) {
+            $this->callRepository($tableName, $schemaOption);
         }
     }
 
-    private function callMigration(string $tableName, string $schemaOption, string $timestamp): void
+    private function callService(string $tableName, string $schemaOption): void
+    {
+        $this->call("crudify:service", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->line("Service Created!");
+    }
+
+    private function callRepository(string $tableName, string $schemaOption): void
+    {
+        $this->call("crudify:repository", ['name' => $tableName, '--schema' => $schemaOption]);
+        $this->line("Repository Created!");
+    }
+
+    private function callMigration(string $tableName, string $schemaOption, string|null $timestamp): void
     {
         $this->call("crudify:migration", ['name' => $tableName, '--schema' => $schemaOption, '--timestamp' => $timestamp]);
         $this->line("Migration Created!");
@@ -91,9 +113,12 @@ class AllCommand extends Command
         $this->line("Model Created!");
     }
 
-    private function callController(string $tableName, string $schemaOption): void
+    private function callController(string $tableName, string $schemaOption, $service): void
     {
-        $this->call("crudify:controller", ['name' => $tableName, '--schema' => $schemaOption]);
+        $opt = ['name' => $tableName, '--schema' => $schemaOption];
+        if($service == 'y')
+            $opt = ['name' => $tableName, '--schema' => $schemaOption, '--service' => $service];
+        $this->call("crudify:controller", $opt);
         $this->line("Controller Created!");
     }
 

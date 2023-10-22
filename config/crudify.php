@@ -9,6 +9,7 @@ return [
             'show' => null,
         ]
     ],
+    'namespace_bases' => null, // [null = repository]
     'theme' => 'bootstrap', // [bootstrap|tailwind]
     'blueprint_types' => [
         'increments', 'integerIncrements', 'tinyIncrements', 'smallIncrements', 'mediumIncrements', 'bigIncrements',

@@ -6,9 +6,17 @@ use App\Models\{{modelName}};
 use Illuminate\Http\Request;
 use App\Http\Requests\{{modelName}}StoreRequest;
 use App\Http\Requests\{{modelName}}UpdateRequest;
+@if('service')use App\Services\{{modelName}}Service;@endif('service')
 
 class {{modelName}}Controller extends Controller
 {
+    @if('service')protected ${{parameterName}}Service;@endif('service')
+
+    public function __construct({{modelName}}Service ${{parameterName}}Service)
+    {
+        @if('service')$this->{{parameterName}}Service = ${{parameterName}}Service;@endif('service')
+    }
+
     public function index()
     {
         ${{pluralName}} = {{modelName}}::paginate(10);

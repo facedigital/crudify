@@ -4,6 +4,8 @@ namespace FaceDigital\Crudify\Providers;
 
 use FaceDigital\Crudify\Commands\AllCommand;
 use FaceDigital\Crudify\Commands\ControllerCommand;
+use FaceDigital\Crudify\Commands\RepositoryCommand;
+use FaceDigital\Crudify\Commands\ServiceCommand;
 use FaceDigital\Crudify\Commands\StoreRequestCommand;
 use FaceDigital\Crudify\Commands\UpdateRequestCommand;
 use FaceDigital\Crudify\Commands\FactoryCommand;
@@ -59,9 +61,11 @@ class CrudifyServiceProvider extends ServiceProvider implements DeferrableProvid
                 ControllerCommand::class,
                 StoreRequestCommand::class,
                 UpdateRequestCommand::class,
+                RepositoryCommand::class,
                 ViewIndexCommand::class,
                 ViewCreateCommand::class,
                 ViewEditCommand::class,
+                ServiceCommand::class,
                 ViewShowCommand::class
             ]);
         }
@@ -80,6 +84,8 @@ class CrudifyServiceProvider extends ServiceProvider implements DeferrableProvid
             ViewIndexCommand::class,
             ViewCreateCommand::class,
             ViewEditCommand::class,
+            ServiceCommand::class,
+            RepositoryCommand::class,
             ViewShowCommand::class
         ];
     }

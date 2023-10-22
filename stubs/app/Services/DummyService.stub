@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Services;
+
+use App\Interfaces\DummyRepositoryInterface;
+use BaseServiceDM\BaseService;
+/**
+ * Class DummyService
+ * @package App\Services
+ */
+class DummyService
+{
+    use BaseService;
+    /**
+     * @var DummyRepositoryInterface
+     */
+    protected $dummyRepository;
+
+    /**
+     * DummyService constructor.
+     * @param DummyRepositoryInterface $dummyRepository
+     */
+    public function __construct(DummyRepositoryInterface $dummyRepository)
+    {
+        $this->dummyRepository = $dummyRepository;
+        $this->setBaseServiceClass($dummyRepository);
+    }
+
+}
