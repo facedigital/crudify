@@ -1,14 +1,18 @@
 <?php
 namespace FaceDigital\Crudify\Commands;
 
+use FaceDigital\Crudify\GeneratorTools\FileManger;
 use FaceDigital\Crudify\Parsers\SchemaParser;
 use FaceDigital\Crudify\SyntaxBuilders\ControllerSyntaxBuilder;
 
 class ControllerCommand extends GeneratorCommand
 {
+    use FileManger;
+    
     protected $signature = 'crudify:controller
     { name : resource name(singular) }
-    {--schema= : Schema options}';
+    {--schema= : Schema options}
+    {--service= : Optional Yes/No}';
 
     protected $description = 'Cria um novo controller e aplica o schema';
 
@@ -21,14 +25,19 @@ class ControllerCommand extends GeneratorCommand
         } else {
             $schemaOption = $this->option('schema');
         }
-
+        
         $schema = (new SchemaParser())->parse($schemaOption);
         $content = (new ControllerSyntaxBuilder())->create($schema);
 
         $content = str_replace('{{modelName}}', $this->modelName(), $content);
         $content = str_replace('{{pluralName}}', $this->pluralName(), $content);
         $content = str_replace('{{singularName}}', $this->singularName(), $content);
+        $content = str_replace('{{parameterName}}', $this->parameterName(), $content);
 
+        
+        $content = $this->removeTags($content, ['service']);
+        
+        
         return $content;
     }
 

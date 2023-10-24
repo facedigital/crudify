@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Dummy;
+use BaseServiceDM\BaseRepository;
+use App\Interfaces\DummyRepositoryInterface;
+
+/**
+ * Class DummyRepository
+ * @package App\Repositories
+
+ */
+class DummyRepository implements DummyRepositoryInterface
+{
+    use BaseRepository;
+    /**
+     * Dummy constructor.
+     * @param Dummy $dummy
+     */
+    public function __construct(Dummy $dummy)
+    {
+        $this->setEntityClass($dummy);
+    }
+
+}
