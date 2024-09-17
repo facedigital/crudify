@@ -15,14 +15,14 @@
       "email": "lucianobragaweb@gmail.com"
     }
   ],
-  "require": {
-    "illuminate/support": "^9.0",
-    "illuminate/console": "^9.27",
-    "doctrine/dbal": "^3.6"
+ "require": {
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "illuminate/console": "^9.27|^10.0|^11.0",
+    "doctrine/dbal": "^3.6|^4.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^7.0",
-    "phpunit/phpunit": "^9.5"
+    "orchestra/testbench": "^7.0|^8.0|^9.0",
+    "phpunit/phpunit": "^9.5|^10.0|^11.0"
   },
   "autoload": {
     "psr-4": {
